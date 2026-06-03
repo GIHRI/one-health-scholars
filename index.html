@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Health Scholars — University of Illinois</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 21px; }
+    :root {
+      --navy: #13294B;
+      --navy-deep: #0D1F38;
+      --navy-mid: #1e3f73;
+      --orange: #E84A27;
+      --white: #ffffff;
+      --cream: #fafafa;
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --border: #e0e0e0;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
+    .content { flex: 1; }
+
+    /* NAV */
+    nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+    .nav-logo{display:flex;align-items:center;gap:.75rem;padding:.9rem 0}
+    .nav-logo-block{width:32px;height:32px;background:var(--orange);border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .nav-logo-block svg{width:18px;height:18px;fill:#fff}
+    .nav-logo-text{font-family:'Montserrat',sans-serif;color:#fff;font-size:1rem;font-weight:600;line-height:1.2}
+    .nav-logo-text span{display:block;font-size:.7rem;color:rgba(255,255,255,.55);font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.05em}
+    .nav-links{display:flex}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
+    .nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+
+    /* SHARED FOOTER */
+    .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
+    .sf-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+    .sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
+    .sf-brand span{color:#E84A27;}
+    .sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
+    .sf-copy{font-size:.62rem;color:rgba(255,255,255,.3);}
+    .sf-partners{display:flex;align-items:center;justify-content:center;gap:1.25rem;}
+    .sf-partner{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
+    .sf-divider{width:1px;height:36px;background:rgba(255,255,255,.12);}
+    .sf-links{display:flex;flex-direction:column;gap:.55rem;}
+    .sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+    .sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+    .sf-links a:hover{color:#E84A27;}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-block">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div class="nav-logo-text">One Health Scholars<span>University of Illinois</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="project.html">Project</a>
+      <a href="team.html">Team</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <div class="content"></div>
+
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div>
+        <div class="sf-brand">One Health <span>Scholars</span></div>
+        <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
+        <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
+      </div>
+      <div class="sf-partners">
+        <div class="sf-partner">
+          <img src="images/system.png" alt="U of I System" style="max-height:200px;max-width:300px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        </div>
+        <div class="sf-divider"></div>
+        <div class="sf-partner">
+          <img src="images/dpi.png" alt="Discovery Partners Institute" style="max-height:140px;max-width:220px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        </div>
+        <div class="sf-divider"></div>
+        <div class="sf-partner">
+          <img src="images/idph.png" alt="IDPH" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        </div>
+      </div>
+      <div class="sf-links" style="margin-left:2rem;">
+        <div class="sf-links-head">Links</div>
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="faculty.html">Faculty</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

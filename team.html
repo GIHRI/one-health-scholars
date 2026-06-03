@@ -84,19 +84,19 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 
 /* ── SHARED FOOTER ── */
 .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
-.sf-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+.sf-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
 .sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
 .sf-brand span{color:#E84A27;}
 .sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
 .sf-copy{font-size:.62rem;color:rgba(255,255,255,.3);}
-.sf-partners{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding-top:.25rem;}
-.sf-partner{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.sf-partners{display:flex;align-items:center;justify-content:center;gap:1.25rem;}
+.sf-partner{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
 .sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
 .sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
-.sf-divider{width:1px;height:44px;background:rgba(255,255,255,.12);}
+.sf-divider{width:1px;height:36px;background:rgba(255,255,255,.12);}
 .sf-links{display:flex;flex-direction:column;gap:.55rem;}
-.sf-links-head{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.sf-links a{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
 .sf-links a:hover{color:#E84A27;}
 </style>
 </head>
@@ -110,10 +110,11 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
     <div class="nav-logo-text">One Health Scholars<span>University of Illinois</span></div>
   </div>
   <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Project</a>
-    <a href="#" class="active">Team</a>
-    <a href="#">Contact Us</a>
+    <a href="index.html">Home</a>
+    <a href="project.html">Project</a>
+    <a href="team.html" class="active">Team</a>
+    <a href="faculty.html">Faculty</a>
+    <a href="contact.html">Contact Us</a>
   </div>
 </nav>
 
@@ -275,21 +276,18 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
     </div>
     <div class="sf-partners">
       <div class="sf-partner">
-        <img src="images/system.png" alt="U of I System" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
-        <span class="sf-partner-label">U of I System</span>
+        <img src="images/system.png" alt="U of I System" style="max-height:200px;max-width:300px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
       </div>
       <div class="sf-divider"></div>
       <div class="sf-partner">
-        <img src="images/dpi.webp" alt="Discovery Partners Institute" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
-        <span class="sf-partner-label">DPI</span>
+        <img src="images/dpi.png" alt="Discovery Partners Institute" style="max-height:140px;max-width:220px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
       </div>
       <div class="sf-divider"></div>
       <div class="sf-partner">
-        <img src="images/idph.png" alt="IDPH" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
-        <span class="sf-partner-label">IDPH</span>
+        <img src="images/idph.png" alt="IDPH" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
       </div>
     </div>
-    <div class="sf-links">
+    <div class="sf-links" style="margin-left:2rem;">
       <div class="sf-links-head">Links</div>
       <a href="index.html">Home</a>
       <a href="team.html">Team</a>
