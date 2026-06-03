@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — One Health Scholars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:21px}
+:root{
+  --orange:#E84A27;--navy:#13294B;--navy-mid:#1e3f73;
+  --cream:#fafafa;--text:#1a1a1a;--muted:#5a5a5a;--border:#e0e0e0;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+
+/* NAV */
+nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;padding:.9rem 0}
+.nav-logo-block{width:32px;height:32px;background:var(--orange);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.nav-logo-block svg{width:18px;height:18px;fill:#fff}
+.nav-logo-text{font-family:'Montserrat',sans-serif;color:#fff;font-size:1rem;font-weight:600;line-height:1.2}
+.nav-logo-text span{display:block;font-size:.7rem;color:rgba(255,255,255,.55);font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.05em}
+.nav-links{display:flex}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+
+/* HERO */
+.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
+.hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
+.hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
+.hero-line{width:48px;height:3px;background:var(--orange);margin:1.25rem 0}
+.hero p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;font-weight:300;line-height:1.75}
+
+/* TIMELINE */
+.tl-node{cursor:pointer;padding:0 .5rem}
+.tl-date{font-size:.65rem;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:.6rem;text-transform:uppercase}
+.tl-dot{width:20px;height:20px;border-radius:50%;background:var(--border);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--border);margin:0 auto .6rem;transition:background .2s,box-shadow .2s}
+.tl-label{font-size:.72rem;font-weight:600;color:var(--navy);line-height:1.3}
+.tl-node:hover .tl-dot{background:var(--navy-mid);box-shadow:0 0 0 2px var(--navy-mid)}
+.tl-node.active .tl-dot{background:var(--orange);box-shadow:0 0 0 3px rgba(232,74,39,.25)}
+.tl-node.active .tl-date{color:var(--orange)}
+.tl-node.active .tl-label{color:var(--orange)}
+.tl-panel{display:none;background:#fff;border-radius:14px;border:1px solid var(--border);border-left:4px solid var(--orange);padding:1.5rem 2rem;font-size:.9rem;color:var(--muted);line-height:1.8;animation:fadeSlide .25s ease}
+.tl-panel strong{display:block;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SHARED FOOTER ── */
+.site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
+.sf-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+.sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
+.sf-brand span{color:#E84A27;}
+.sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
+.sf-copy{font-size:.62rem;color:rgba(255,255,255,.3);}
+.sf-partners{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding-top:.25rem;}
+.sf-partner{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
+.sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.sf-divider{width:1px;height:44px;background:rgba(255,255,255,.12);}
+.sf-links{display:flex;flex-direction:column;gap:.55rem;}
+.sf-links-head{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.sf-links a{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.sf-links a:hover{color:#E84A27;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-block">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    <div class="nav-logo-text">One Health Scholars<span>University of Illinois</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="project.html" class="active">Project</a>
+    <a href="team.html">Team</a>
+    <a href="faculty.html">Faculty</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Illinois One Health Scholars Program</div>
+    <h1>The 2026 <em>Project Timeline</em></h1>
+    <div class="hero-line"></div>
+    <p>Follow the cohort from mentorship launch through scholar placement. Click any milestone to see what happens and why it matters.</p>
+  </div>
+</div>
+
+<!-- BOLD STATEMENT + INTERACTIVE TIMELINE -->
+<div style="background:var(--cream);">
+
+  <!-- Bold statement -->
+  <div style="max-width:1400px;margin:0 auto;padding:5rem 48px 3rem;text-align:center;">
+    <div style="font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:1.25rem;">The 2026 Cohort in One Line</div>
+    <p style="font-family:'Source Serif 4',serif;font-size:2.6rem;color:var(--navy);font-weight:600;line-height:1.3;max-width:900px;margin:0 auto;">
+      3 researchers. 3 projects. <em style="color:var(--orange);font-style:italic;font-weight:300;">One year to change Illinois public health.</em>
+    </p>
+  </div>
+
+  <!-- Interactive timeline -->
+  <div style="max-width:1400px;margin:0 auto;padding:0 48px 5rem;">
+
+    <div style="font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:2.5rem;">Click a milestone to learn more</div>
+
+    <div style="position:relative;">
+      <div style="position:absolute;top:22px;left:10%;right:10%;height:2px;background:var(--border);z-index:0;"></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);position:relative;z-index:1;text-align:center;">
+
+        <div class="tl-node" onclick="tlActivate(this,0)">
+          <div class="tl-date">Feb 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Mentorship Begins</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,1)">
+          <div class="tl-date">Mar 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Field Research</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,2)">
+          <div class="tl-date">Apr 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Modules Delivered</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,3)">
+          <div class="tl-date">Summer 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Stakeholder Review</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,4)">
+          <div class="tl-date">2027</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Scholars Placed</div>
+        </div>
+
+      </div>
+
+      <div id="tl-panels" style="margin-top:2rem;">
+        <div class="tl-panel" id="tl-panel-0">
+          <strong>Mentorship Begins, Feb 2026</strong>
+          Each of the three faculty mentors is matched with a graduate scholar. Scholars are oriented to their project scope, introduced to community partners, and begin structured weekly check-ins with their mentor.
+        </div>
+        <div class="tl-panel" id="tl-panel-1">
+          <strong>Field Research, Mar 2026</strong>
+          Scholars move into active data collection and community engagement. Projects span Cook County wildlife surveillance, county-level maternal health modeling, and greenspace biodiversity assessment in Markham, IL.
+        </div>
+        <div class="tl-panel" id="tl-panel-2">
+          <strong>Course Modules Delivered, Apr 2026</strong>
+          Faculty submit four completed One Health training modules to DPI. Each module is reviewed for accuracy, accessibility, and alignment with Illinois public health workforce needs before final production.
+        </div>
+        <div class="tl-panel" id="tl-panel-3">
+          <strong>Stakeholder Review, Summer 2026</strong>
+          DPI and IDPH host a One Health Stakeholder Course Feedback event. Public health practitioners, local health department staff, and community partners review module content and provide structured feedback before statewide rollout.
+        </div>
+        <div class="tl-panel" id="tl-panel-4">
+          <strong>Scholars Placed, 2027</strong>
+          Graduate scholars complete the program and enter the Illinois public health workforce as trained One Health coordinators, carrying applied research experience and cross-sector relationships built during the 2026 cohort year.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="sf-inner">
+    <div>
+      <div class="sf-brand">One Health <span>Scholars</span></div>
+      <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
+      <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
+    </div>
+    <div class="sf-partners">
+      <div class="sf-partner">
+        <img src="images/system.png" alt="U of I System" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">U of I System</span>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-partner">
+        <img src="images/dpi.webp" alt="Discovery Partners Institute" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">DPI</span>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-partner">
+        <img src="images/idph.png" alt="IDPH" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">IDPH</span>
+      </div>
+    </div>
+    <div class="sf-links">
+      <div class="sf-links-head">Links</div>
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="project.html">Project</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function tlActivate(node, index) {
+    var nodes = document.querySelectorAll('.tl-node');
+    var panels = document.querySelectorAll('.tl-panel');
+    var alreadyActive = node.classList.contains('active');
+    nodes.forEach(function(n){ n.classList.remove('active'); });
+    panels.forEach(function(p){ p.style.display = 'none'; });
+    if (!alreadyActive) {
+      node.classList.add('active');
+      var panel = document.getElementById('tl-panel-' + index);
+      panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+</script>
+
+</body>
+</html>

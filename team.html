@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — One Health Scholars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:21px}
+:root{
+  --orange:#E84A27;--navy:#13294B;--navy-mid:#1e3f73;
+  --cream:#fafafa;--text:#1a1a1a;--muted:#5a5a5a;--border:#e0e0e0;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+
+/* NAV */
+nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;padding:.9rem 0}
+.nav-logo-block{width:32px;height:32px;background:var(--orange);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.nav-logo-block svg{width:18px;height:18px;fill:#fff}
+.nav-logo-text{font-family:'Montserrat',sans-serif;color:#fff;font-size:1rem;font-weight:600;line-height:1.2}
+.nav-logo-text span{display:block;font-size:.7rem;color:rgba(255,255,255,.55);font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.05em}
+.nav-links{display:flex}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+
+/* HERO */
+.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
+.hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
+.hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
+.hero-sub{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;font-weight:300;line-height:1.75}
+.hero-line{width:48px;height:3px;background:var(--orange);margin:1.25rem 0}
+
+/* CONTENT */
+.content{max-width:1400px;margin:0 auto;padding:3rem 1.5rem 5rem}
+
+/* SECTION */
+.team-section{margin-bottom:3.5rem}
+.section-label{display:flex;align-items:center;justify-content:center;gap:.9rem;margin-bottom:2rem}
+.section-label-text{font-family:'Source Serif 4',serif;font-size:1.5rem;color:var(--navy);font-weight:600}
+.section-label-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.section-pill{font-size:1.4rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--orange);padding:0;flex-shrink:0}
+
+/* GRID */
+.team-grid{display:grid;grid-template-columns:1fr 1fr 3rem 1fr 1fr;gap:1.5rem}
+.team-grid.centered{grid-template-columns:repeat(2,minmax(0,320px));justify-content:center}
+.col-divider{display:block}
+.section-label-row{display:grid;grid-template-columns:1fr 1fr;margin-bottom:1.5rem}
+
+/* CARD */
+.member-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform .22s,box-shadow .22s}
+.member-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(19,41,75,.1)}
+.card-photo{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--navy) 0%,#1e3f73 60%,rgba(232,74,39,.25) 100%)}
+.card-photo-placeholder{width:80px;height:80px;border-radius:50%;border:3px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Source Serif 4',serif;font-size:1.8rem;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08)}
+.card-photo img{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.25)}
+.card-photo-accent{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),#ff8c5a)}
+.card-photo.idph{background:linear-gradient(145deg,var(--navy) 0%,#1e3f73 60%,rgba(232,74,39,.25) 100%)}
+.card-body{padding:1.25rem 1.25rem 1.5rem}
+.card-name{font-weight:600;font-size:.95rem;color:var(--text);margin-bottom:.2rem;line-height:1.3}
+.card-role{font-size:.78rem;color:var(--orange);font-weight:600;letter-spacing:.03em;margin-bottom:.9rem;text-transform:uppercase}
+.card-bio-short{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:.75rem}
+.show-more-btn{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;color:#1a1a1a;cursor:pointer;padding:0;display:flex;align-items:center;gap:.3rem;letter-spacing:.02em;transition:color .18s}
+.show-more-btn:hover{color:var(--orange)}
+.show-more-btn svg{width:14px;height:14px;transition:transform .22s}
+.show-more-btn.open svg{transform:rotate(180deg)}
+.card-bio-full{display:none;font-size:.82rem;color:var(--muted);line-height:1.65;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.card-bio-full.visible{display:block}
+.card-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;color:var(--navy);text-decoration:none;font-weight:500;border:1.5px solid var(--border);padding:.3rem .8rem;border-radius:20px;transition:all .18s;margin-top:.75rem}
+.card-link:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card-link svg{width:11px;height:11px}
+.card-body.simple{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:90px}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.5rem 2.5rem}
+.footer-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.6);text-decoration:none;margin-left:1.5rem}
+.footer-links a:hover{color:#fff}
+
+/* ── SHARED FOOTER ── */
+.site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
+.sf-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+.sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
+.sf-brand span{color:#E84A27;}
+.sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
+.sf-copy{font-size:.62rem;color:rgba(255,255,255,.3);}
+.sf-partners{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding-top:.25rem;}
+.sf-partner{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
+.sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.sf-divider{width:1px;height:44px;background:rgba(255,255,255,.12);}
+.sf-links{display:flex;flex-direction:column;gap:.55rem;}
+.sf-links-head{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.sf-links a{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.sf-links a:hover{color:#E84A27;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-block">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    <div class="nav-logo-text">One Health Scholars<span>University of Illinois</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Project</a>
+    <a href="#" class="active">Team</a>
+    <a href="#">Contact Us</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Illinois One Health Scholars Program</div>
+    <h1>The people behind<br><em>One Health Scholars</em> in Illinois</h1>
+    <div class="hero-line"></div>
+    <p class="hero-sub">An interdisciplinary team connecting human, animal, and environmental health across research, policy, and practice.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="team-section">
+
+    <!-- Split labels: DPI left, IDPH right -->
+    <div class="section-label-row">
+      <div class="section-label"><span class="section-pill">DPI Team</span></div>
+      <div class="section-label"><span class="section-pill">IDPH Team</span></div>
+    </div>
+
+    <!-- Row 1: Rukmini, Anuj, Arti, Matthew -->
+    <div class="team-grid" style="margin-bottom:1.5rem">
+
+      <div class="member-card">
+        <div class="card-photo">
+          <img src="images/Rukminiv1.jpg" alt="Dr. Rukmini Manasa Avadhanam">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Dr. Rukmini Manasa Avadhanam</div>
+          <div class="card-role">Principal Investigator</div>
+          <div class="card-bio-short">Senior Research Associate at DPI. A trained learning scientist and instructional designer with a Ph.D. in Curriculum & Instruction.</div>
+          <button class="show-more-btn" onclick="toggleBio(this)">
+            Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="card-bio-full">
+            Her research focuses on improving learning experiences for adult and K–12 learners through educational technologies and experiential learning. Within the One Health Research Program, she oversees program development, connects faculty mentors with student scholars, coordinates partnerships with local government sectors across Illinois, and leads the One Health Course module development.
+          </div>
+          <a class="card-link" href="https://dpi.illinois.edu/about/directory/rukmini-avadhanam" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="card-photo">
+          <img src="images/Anuj.jpg" alt="Dr. Anuj Tiwari">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Dr. Anuj Tiwari</div>
+          <div class="card-role">Co-Principal Investigator</div>
+          <div class="card-bio-short">Research Scientist at DPI, UIUC. Works at the intersection of geospatial science, AI, and One Health.</div>
+          <button class="show-more-btn" onclick="toggleBio(this)">
+            Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="card-bio-full">
+            His research focuses on understanding connections among human, animal, and environmental health through AI-driven analytics, geospatial modeling, and decision-support systems. He leads initiatives in infectious disease surveillance, geospatial platform development, and One Health informatics. Within the Illinois One Health Scholars Program, he provides strategic leadership in program development, partnership building, and advancing interdisciplinary One Health research.
+          </div>
+          <a class="card-link" href="https://dpi.illinois.edu/about/directory/anuj-tiwari" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="member-card">
+        <div class="card-photo idph">
+          <img src="images/ArtiBarnes.png" alt="Dr. Arti Barnes">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body simple">
+          <div class="card-name">Dr. Arti Barnes</div>
+          <div class="card-role">Chief Medical Officer</div>
+          <a class="card-link" href="https://nationalpress.org/speaker/dr-arti-barnes/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="card-photo idph">
+          <img src="images/MatthewLeslie.png" alt="Dr. Matthew Leslie">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body simple">
+          <div class="card-name">Dr. Matthew Leslie</div>
+          <div class="card-role">Lead Data Epidemiologist</div>
+          <a class="card-link" href="https://leparvet.net/staff/dr-matthew-leslie/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: Mayowa, Aman under DPI columns -->
+    <div class="team-grid">
+
+      <div class="member-card">
+        <div class="card-photo">
+          <img src="images/MayowaAdebowale.png" alt="Mayowa Elizabeth Adebowale">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Mayowa Elizabeth Adebowale</div>
+          <div class="card-role">Graduate Research Assistant</div>
+          <div class="card-bio-short">Graduate student at UIC with a background in Biomedical Science and a strong interest in innovative medicine and public health.</div>
+          <button class="show-more-btn" onclick="toggleBio(this)">
+            Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="card-bio-full">
+            Her interests center on the intersection of healthcare research, technology, and community health impact. As a Graduate Research Assistant, Mayowa supports the lead researchers in coordinating day-to-day operations of the program and contributes to external research, resource gathering, and program organization related to One Health initiatives and public health awareness in Illinois.
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="card-photo">
+          <img src="images/aman.jpg" alt="Aman Saji">
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Aman Saji</div>
+          <div class="card-role">Full Stack Developer</div>
+          <div class="card-bio-short">Undergraduate student in Computer Engineering at UIUC, working at DPI under Dr. Anuj Tiwari.</div>
+          <button class="show-more-btn" onclick="toggleBio(this)">
+            Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="card-bio-full">
+            Aman contributes to the technical development of the One Health Scholars platform, building full-stack web infrastructure that supports the program's research and outreach goals. His work spans backend API development, database architecture, and frontend design, translating complex public health data into accessible, user-friendly digital tools.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="sf-inner">
+    <div>
+      <div class="sf-brand">One Health <span>Scholars</span></div>
+      <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
+      <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
+    </div>
+    <div class="sf-partners">
+      <div class="sf-partner">
+        <img src="images/system.png" alt="U of I System" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">U of I System</span>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-partner">
+        <img src="images/dpi.webp" alt="Discovery Partners Institute" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">DPI</span>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-partner">
+        <img src="images/idph.png" alt="IDPH" style="max-height:70px;max-width:160px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <span class="sf-partner-label">IDPH</span>
+      </div>
+    </div>
+    <div class="sf-links">
+      <div class="sf-links-head">Links</div>
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="project.html">Project</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleBio(btn) {
+  const bio = btn.nextElementSibling;
+  const open = bio.classList.toggle('visible');
+  btn.classList.toggle('open', open);
+  btn.childNodes[0].textContent = open ? 'Show less ' : 'Read more ';
+}
+</script>
+
+</body>
+</html>
