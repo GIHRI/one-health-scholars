@@ -25,11 +25,22 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 .nav-links{display:flex}
 .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+.nav-dropdown{position:relative}
+.nav-drop-btn{font-family:inherit;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:.45rem;transition:all .2s}
+.nav-drop-caret{font-size:.55rem;transition:transform .2s}
+.nav-dropdown:hover .nav-drop-btn,.nav-drop-btn.active{color:#fff;border-bottom-color:var(--orange)}
+.nav-dropdown:hover .nav-drop-caret{transform:rotate(180deg)}
+.nav-drop-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);border-top:3px solid var(--orange);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.nav-dropdown:hover .nav-drop-menu{display:block}
+.nav-drop-menu a{display:block;border-bottom:none;padding:.8rem 1.1rem}
+.nav-drop-menu a:hover,.nav-drop-menu a.active{border-bottom:none;background:rgba(255,255,255,.08)}
+@keyframes pageRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
 /* HERO */
-.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
+.hero{background:var(--navy);padding:4rem 1.5rem 3.5rem;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
-.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
 .hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
 .hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
 .hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
@@ -112,10 +123,15 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="project.html">Project</a>
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+      <div class="nav-drop-menu">
+        <a href="faculty.html">Faculty</a>
+        <a href="students.html">Students</a>
+        <a href="lhd.html">Health Depts</a>
+      </div>
+    </div>
     <a href="team.html" class="active">Team</a>
-    <a href="faculty.html">Faculty</a>
-    <a href="students.html">Students</a>
-    <a href="lhd.html">Health Depts</a>
     <a href="contact.html">Contact Us</a>
   </div>
 </nav>

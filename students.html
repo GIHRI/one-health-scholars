@@ -50,6 +50,17 @@
     .nav-links{display:flex}
     .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
     .nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+    .nav-dropdown{position:relative}
+    .nav-drop-btn{font-family:inherit;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:.45rem;transition:all .2s}
+    .nav-drop-caret{font-size:.55rem;transition:transform .2s}
+    .nav-dropdown:hover .nav-drop-btn,.nav-drop-btn.active{color:#fff;border-bottom-color:var(--orange)}
+    .nav-dropdown:hover .nav-drop-caret{transform:rotate(180deg)}
+    .nav-drop-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);border-top:3px solid var(--orange);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+    .nav-dropdown:hover .nav-drop-menu{display:block}
+    .nav-drop-menu a{display:block;border-bottom:none;padding:.8rem 1.1rem}
+    .nav-drop-menu a:hover,.nav-drop-menu a.active{border-bottom:none;background:rgba(255,255,255,.08)}
+    @keyframes pageRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
     /* ── HERO ── */
     .hero {
@@ -90,7 +101,6 @@
     .hero p {
       font-size: .95rem;
       color: rgba(255,255,255,0.65);
-      max-width: 560px;
       font-weight: 300;
       line-height: 1.75;
     }
@@ -215,10 +225,15 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="project.html">Project</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn active">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+        <div class="nav-drop-menu">
+          <a href="faculty.html">Faculty</a>
+          <a href="students.html" class="active">Students</a>
+          <a href="lhd.html">Health Depts</a>
+        </div>
+      </div>
       <a href="team.html">Team</a>
-      <a href="faculty.html">Faculty</a>
-      <a href="students.html" class="active">Students</a>
-      <a href="lhd.html">Health Depts</a>
       <a href="contact.html">Contact Us</a>
     </div>
   </nav>
@@ -283,16 +298,16 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="uni-badge-sm"><img src="images/UIC.png" alt="UIC"></div>
-          <div class="avatar">AR</div>
+
+          <div class="avatar"><img src="images/Prafulla.jpeg" alt="Sai Prafulla Caringula"></div>
           <div>
-            <div class="card-name">Alex Rivera</div>
-            <div class="card-credentials">MPH, Epidemiology · Year 2</div>
-            <div class="card-title">Graduate Scholar</div>
-            <div class="card-dept">University of Illinois Chicago</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Alex is a second-year MPH student specializing in epidemiology at the University of Illinois Chicago, where his research focuses on infectious disease surveillance in urban communities. He brings prior experience in community health outreach and joins the 2026 cohort to deepen his applied research skills at the intersection of human, animal, and environmental health.</p>
+            <div class="card-name">Sai Prafulla Caringula</div>
+            <div class="card-credentials">MPH, Epidemiology</div>
+
+            <div class="card-dept">University of Illinois Urbana-Champaign</div>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Sai Prafulla recently completed her Master of Public Health in Epidemiology at the University of Illinois Urbana-Champaign and is a dentist trained in India. She is passionate about translating research into practice to improve population health outcomes.</p>
           </div>
-          <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
+          <a class="card-link" href="https://www.linkedin.com/in/dr-prafulla-caringula-06000b217" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -303,16 +318,16 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="uni-badge-sm"><img src="images/UIUC.png" alt="UIUC"></div>
-          <div class="avatar">MP</div>
+
+          <div class="avatar"><img src="images/Haley.jpeg" alt="Haley Elmer" style="object-position:5% top;"></div>
           <div>
-            <div class="card-name">Maya Patel</div>
-            <div class="card-credentials">MS, Environmental Health Sciences · Year 1</div>
-            <div class="card-title">Graduate Scholar</div>
-            <div class="card-dept">University of Illinois Urbana-Champaign</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Maya is a first-year MS student in Environmental Health Sciences at the University of Illinois Urbana-Champaign, with a focus on how environmental exposures shape community health outcomes across rural Illinois. Her background in chemistry and environmental policy draws her to the One Health framework as a lens for understanding how ecosystems and human wellbeing are interconnected.</p>
+            <div class="card-name">Haley Elmer</div>
+            <div class="card-credentials">MPH, Biostatistics</div>
+
+            <div class="card-dept">University of Illinois Chicago</div>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Haley recently earned her MPH in Biostatistics from the University of Illinois Chicago and holds a Bachelor's in Integrative Biology from the University of Illinois Urbana-Champaign. Her background in tick ecology research drives a strong interest in emerging One Health challenges, and she is focused on applying evidence-based practices to tackle them.</p>
           </div>
-          <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
+          <a class="card-link" href="https://www.linkedin.com/in/haley-elmer-mph-19991b29b" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -323,14 +338,14 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="uni-badge-sm"><img src="images/UIS.jpeg" alt="UIS"></div>
-          <div class="avatar">JK</div>
+
+          <div class="avatar"><img src="images/Alyah.jpg" alt="Alyah Barnes" style="object-position:center 15%;"></div>
           <div>
-            <div class="card-name">Jordan Kim</div>
-            <div class="card-credentials">MPH, Public Health Policy · Year 2</div>
-            <div class="card-title">Graduate Scholar</div>
-            <div class="card-dept">University of Illinois Springfield</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Jordan is a second-year MPH student in Public Health Policy at the University of Illinois Springfield, with a research focus on health equity and policy reform in underserved Illinois communities. She brings legislative research experience from a state health policy internship and sees the One Health Scholars program as a bridge between academic research and public health practice.</p>
+            <div class="card-name">Alyah Barnes</div>
+            <div class="card-credentials">MPH, Community Health Sciences</div>
+
+            <div class="card-dept">University of Illinois Chicago</div>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Alyah recently earned her MPH from the University of Illinois Chicago with a concentration in Community Health Sciences. Her work spans public health research, community engagement, and program implementation, with a particular interest in health equity, chronic disease prevention, and using data to improve health outcomes in underserved communities.</p>
           </div>
           <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -420,7 +435,7 @@
   <section id="training-tracks">
     <div class="tt-inner">
       <div class="tt-section-head">
-        <h2 class="tt-h2">Scholar Training &amp; Development</h2>
+        <h2 class="tt-h2">From Training to Leadership</h2>
       </div>
       <div class="tt-grid">
 
@@ -451,30 +466,6 @@
         <div class="tt-card">
           <div class="tt-front">
             <div class="tt-accent-bar"></div>
-            <div class="tt-front-title">Statistical Modeling</div>
-            <div class="tt-hint">hover to learn more</div>
-          </div>
-          <div class="tt-back">
-            <div class="tt-back-title">Statistical Modeling</div>
-            <p class="tt-back-desc">Scholars use data and analytical tools to identify patterns and evaluate risks, transforming research findings into evidence-based, actionable insights.</p>
-          </div>
-        </div>
-
-        <div class="tt-card">
-          <div class="tt-front">
-            <div class="tt-accent-bar"></div>
-            <div class="tt-front-title">Illinois-Focused Problem Solving</div>
-            <div class="tt-hint">hover to learn more</div>
-          </div>
-          <div class="tt-back">
-            <div class="tt-back-title">Illinois-Focused Problem Solving</div>
-            <p class="tt-back-desc">Research projects examine One Health challenges specific to Illinois communities, focusing on the intersection of human, animal, and environmental health.</p>
-          </div>
-        </div>
-
-        <div class="tt-card">
-          <div class="tt-front">
-            <div class="tt-accent-bar"></div>
             <div class="tt-front-title">Workforce Readiness for Illinois One Health</div>
             <div class="tt-hint">hover to learn more</div>
           </div>
@@ -484,15 +475,241 @@
           </div>
         </div>
 
-        <div class="tt-card">
-          <div class="tt-front">
-            <div class="tt-accent-bar"></div>
-            <div class="tt-front-title">Collaborative Research &amp; Mentorship</div>
-            <div class="tt-hint">hover to learn more</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOLAR QUOTES -->
+  <style>
+    .sq-section {
+      padding: 5rem 3rem 6rem;
+      background: #fdf8f0;
+      background-image: radial-gradient(circle, rgba(0,0,0,.10) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+    }
+    .sq-inner { max-width: 1200px; margin: 0 auto; }
+    .sq-header { text-align: center; margin-bottom: 3.5rem; }
+    .sq-eyebrow {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: .38rem 1.1rem;
+      border: 2.5px solid #1a1a1a;
+      box-shadow: 3px 3px 0 #1a1a1a;
+      margin-bottom: .9rem;
+    }
+    .sq-title {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #13294B;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .sq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .sq-card {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+      max-width: 780px;
+    }
+    .sq-card--right { align-self: flex-end; }
+    .sq-card--right .sq-bubble::before {
+      left: auto;
+      right: 38px;
+      border-top: 20px solid #1a1a1a;
+      border-left: 5px solid transparent;
+      border-right: 16px solid transparent;
+    }
+    .sq-card--right .sq-bubble::after {
+      left: auto;
+      right: 42px;
+      border-top: 14px solid #fff;
+      border-left: 3px solid transparent;
+      border-right: 11px solid transparent;
+    }
+    .sq-card--right .sq-speaker {
+      margin-left: auto;
+      margin-right: 16px;
+      align-self: flex-end;
+    }
+    .sq-bubble {
+      position: relative;
+      background: #fff;
+      border: 3.5px solid #1a1a1a;
+      box-shadow: -8px 8px 0 #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .sq-bubble:hover {
+      transform: translate(3px, -3px);
+      box-shadow: -11px 11px 0 #1a1a1a;
+    }
+    /* tail outer — black border */
+    .sq-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 38px;
+      width: 0; height: 0;
+      border-top: 20px solid #1a1a1a;
+      border-left: 16px solid transparent;
+      border-right: 5px solid transparent;
+      z-index: 1;
+    }
+    /* tail inner — white fill */
+    .sq-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 42px;
+      width: 0; height: 0;
+      border-top: 14px solid #fff;
+      border-left: 11px solid transparent;
+      border-right: 3px solid transparent;
+      z-index: 2;
+    }
+    .sq-panel-bar {
+      height: 9px;
+      background: var(--teal);
+      border-bottom: 2.5px solid #1a1a1a;
+      flex-shrink: 0;
+    }
+    .sq-body {
+      padding: 1.75rem 1.6rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .sq-qmark {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 7rem;
+      line-height: .9;
+      color: var(--teal);
+      opacity: .13;
+      position: absolute;
+      top: .4rem;
+      left: .8rem;
+      font-weight: 900;
+      pointer-events: none;
+      user-select: none;
+    }
+    .sq-quote {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: .87rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      position: relative;
+      z-index: 1;
+      padding-top: 1.25rem;
+    }
+    .sq-speaker {
+      margin-top: 14px;
+      margin-left: 16px;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: #13294B;
+      border: 2.5px solid #1a1a1a;
+      box-shadow: -4px 4px 0 #1a1a1a;
+      padding: .55rem .9rem .55rem .7rem;
+    }
+    .sq-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.5);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .sq-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .sq-role {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .62rem;
+      color: rgba(255,255,255,.5);
+      margin-top: .18rem;
+    }
+    @media(max-width:900px){
+      .sq-card, .sq-card--right { width: 100%; align-self: auto; }
+      .sq-card--right .sq-speaker { margin-left: 16px; margin-right: 0; align-self: flex-start; }
+    }
+  </style>
+
+  <section class="sq-section">
+    <div class="sq-inner">
+      <div class="sq-header">
+        <div class="sq-eyebrow">In Their Own Words</div>
+        <span class="sq-title">Scholar Voices</span>
+      </div>
+      <div class="sq-grid">
+
+        <div class="sq-card">
+          <div class="sq-bubble">
+            <div class="sq-panel-bar"></div>
+            <div class="sq-body">
+              <div class="sq-qmark">"</div>
+              <p class="sq-quote">What excites me most about the One Health Scholars Program is the opportunity to bridge learning and practice while collaborating across disciplines to create meaningful impact in communities.</p>
+            </div>
           </div>
-          <div class="tt-back">
-            <div class="tt-back-title">Collaborative Research &amp; Mentorship</div>
-            <p class="tt-back-desc">Scholars work with faculty mentors and interdisciplinary teams, strengthening research skills and understanding of cross-field collaboration.</p>
+          <div class="sq-speaker">
+            <img src="images/Prafulla.jpeg" alt="Sai Prafulla Caringula" class="sq-avatar">
+            <div>
+              <div class="sq-name">Sai Prafulla Caringula</div>
+              <div class="sq-role">MPH Epidemiology · UIUC</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sq-card sq-card--right">
+          <div class="sq-bubble">
+            <div class="sq-panel-bar"></div>
+            <div class="sq-body">
+              <div class="sq-qmark">"</div>
+              <p class="sq-quote">I was beyond excited when I came across this unique opportunity, because I felt that my academic background and One Health-related research experience aligned perfectly with the program. I am really looking forward to kicking off my public health career by developing the skills necessary to address complex One Health issues while also learning from various experts in the field.</p>
+            </div>
+          </div>
+          <div class="sq-speaker">
+            <img src="images/Haley.jpeg" alt="Haley Elmer" class="sq-avatar" style="object-position:5% top;">
+            <div>
+              <div class="sq-name">Haley Elmer</div>
+              <div class="sq-role">MPH Biostatistics · UIC</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sq-card">
+          <div class="sq-bubble">
+            <div class="sq-panel-bar"></div>
+            <div class="sq-body">
+              <div class="sq-qmark">"</div>
+              <p class="sq-quote">I am excited to join the One Health Scholars Program because it brings together so many of the things I am passionate about, including community health, collaboration, and finding solutions to complex public health challenges. I look forward to growing as a public health professional while working alongside others who are committed to creating healthier and more resilient communities.</p>
+            </div>
+          </div>
+          <div class="sq-speaker">
+            <img src="images/Alyah.jpg" alt="Alyah Barnes" class="sq-avatar" style="object-position:center 15%;">
+            <div>
+              <div class="sq-name">Alyah Barnes</div>
+              <div class="sq-role">MPH Community Health Sciences · UIC</div>
+            </div>
           </div>
         </div>
 

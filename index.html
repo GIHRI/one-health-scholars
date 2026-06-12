@@ -35,6 +35,17 @@
     .nav-links{display:flex}
     .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s}
     .nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--orange)}
+    .nav-dropdown{position:relative}
+    .nav-drop-btn{font-family:inherit;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;padding:1.1rem .9rem;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:.45rem;transition:all .2s}
+    .nav-drop-caret{font-size:.55rem;transition:transform .2s}
+    .nav-dropdown:hover .nav-drop-btn,.nav-drop-btn.active{color:#fff;border-bottom-color:var(--orange)}
+    .nav-dropdown:hover .nav-drop-caret{transform:rotate(180deg)}
+    .nav-drop-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);border-top:3px solid var(--orange);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+    .nav-dropdown:hover .nav-drop-menu{display:block}
+    .nav-drop-menu a{display:block;border-bottom:none;padding:.8rem 1.1rem}
+    .nav-drop-menu a:hover,.nav-drop-menu a.active{border-bottom:none;background:rgba(255,255,255,.08)}
+    @keyframes pageRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
     /* SHARED FOOTER */
     .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
@@ -50,6 +61,16 @@
     .sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
     .sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
     .sf-links a:hover{color:#E84A27;}
+
+    /* HERO */
+    .hero{background:var(--navy);padding:4rem 3rem 3.5rem;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
+    .hero-flex{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;position:relative;z-index:1;}
+    .hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
+    .hero h1{font-family:var(--serif);font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
+    .hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
+    .hero-line{width:48px;height:3px;background:var(--orange);margin:1.25rem 0}
+    .hero p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;font-weight:300;line-height:1.75}
   </style>
 </head>
 <body>
@@ -64,13 +85,45 @@
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="project.html">Project</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+        <div class="nav-drop-menu">
+          <a href="faculty.html">Faculty</a>
+          <a href="students.html">Students</a>
+          <a href="lhd.html">Health Depts</a>
+        </div>
+      </div>
       <a href="team.html">Team</a>
-      <a href="faculty.html">Faculty</a>
-      <a href="students.html">Students</a>
-      <a href="lhd.html">Health Depts</a>
       <a href="contact.html">Contact Us</a>
     </div>
   </nav>
+
+  <div class="hero">
+    <div class="hero-flex">
+      <div style="flex:1;min-width:0;">
+        <div class="hero-eyebrow">University of Illinois</div>
+        <h1>One Health <em>Scholars</em></h1>
+        <div class="hero-line"></div>
+        <p>An interdisciplinary pilot program placing graduate scholars alongside faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
+      </div>
+      <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
+        <svg width="350" height="434" viewBox="0 -18 260 322" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="130" cy="90" r="72" fill="rgba(232,74,39,0.07)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+          <circle cx="88" cy="162" r="72" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+          <circle cx="172" cy="162" r="72" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+          <circle cx="130" cy="136" r="22" fill="rgba(122,92,172,0.28)" stroke="rgba(122,92,172,0.55)" stroke-width="1.2"/>
+          <text x="130" y="131" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.92)" font-family="DM Sans,sans-serif" font-weight="700" letter-spacing="0.05em">ONE</text>
+          <text x="130" y="144" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.92)" font-family="DM Sans,sans-serif" font-weight="700" letter-spacing="0.05em">HEALTH</text>
+          <text x="130" y="0" text-anchor="middle" font-size="15" fill="rgba(255,255,255,0.88)" font-family="DM Sans,sans-serif" font-weight="700">Human Health</text>
+          <text x="52" y="258" text-anchor="middle" font-size="15" fill="rgba(255,255,255,0.88)" font-family="DM Sans,sans-serif" font-weight="700">Animal</text>
+          <text x="52" y="276" text-anchor="middle" font-size="15" fill="rgba(255,255,255,0.88)" font-family="DM Sans,sans-serif" font-weight="700">Health</text>
+          <text x="208" y="258" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.88)" font-family="DM Sans,sans-serif" font-weight="700">Environmental</text>
+          <text x="208" y="274" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.88)" font-family="DM Sans,sans-serif" font-weight="700">Health</text>
+          <text x="130" y="293" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.35)" font-family="DM Sans,sans-serif" font-weight="600" letter-spacing="0.1em">ONE HEALTH FRAMEWORK</text>
+        </svg>
+      </div>
+    </div>
+  </div>
 
   <div class="content"></div>
 
