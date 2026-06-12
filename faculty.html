@@ -76,7 +76,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(232,74,39,.18) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
     .hero-eyebrow {
       font-size: 1rem;
       font-weight: 600;
@@ -428,10 +428,33 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Experiential Learning</div>
-      <h1>Faculty <em>Mentors</em></h1>
-      <div class="hero-line"></div>
-      <p class="hero-sub">DPI identified three faculty mentors through a structured call across UIUC, UIC, and UIS, selecting researchers with active One Health-aligned projects, existing Illinois community partnerships, and availability to guide a graduate scholar through the 2026 cohort year.</p>
+      <div style="flex:1;min-width:0;">
+        <div class="hero-eyebrow">Experiential Learning</div>
+        <h1>Faculty <em>Mentors</em></h1>
+        <div class="hero-line"></div>
+        <p class="hero-sub">DPI identified three faculty mentors through a structured call across UIUC, UIC, and UIS, selecting researchers with active One Health-aligned projects, existing Illinois community partnerships, and availability to guide a graduate scholar through the 2026 cohort year.</p>
+      </div>
+      <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
+        <svg width="350" height="430" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- professor behind lectern -->
+          <circle cx="130" cy="52" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+          <path d="M96 118 a34 34 0 0 1 68 0" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+          <!-- lectern top (masks lower shoulders) -->
+          <polygon points="70,122 190,122 202,98 82,98" fill="#13294B"/>
+          <polygon points="70,122 190,122 202,98 82,98" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- microphone -->
+          <path d="M170 98 Q173 88 177 84" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="179" cy="80" r="5" fill="#E84A27"/>
+          <!-- lectern body -->
+          <polygon points="88,122 172,122 164,238 96,238" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- inset panel -->
+          <rect x="106" y="152" width="48" height="62" rx="4" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+          <!-- orange trim on front -->
+          <line x1="100" y1="138" x2="160" y2="138" stroke="rgba(232,74,39,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- base -->
+          <rect x="84" y="238" width="92" height="11" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+        </svg>
+      </div>
     </div>
   </div>
   <!-- SECTION 1: FACULTY PROFILES -->

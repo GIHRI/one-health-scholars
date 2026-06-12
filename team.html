@@ -38,9 +38,9 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
 /* HERO */
-.hero{background:var(--navy);padding:4rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
-.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3rem}
 .hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
 .hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
 .hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
@@ -48,7 +48,7 @@ body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 .hero-line{width:48px;height:3px;background:var(--orange);margin:1.25rem 0}
 
 /* CONTENT */
-.content{max-width:1400px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.content{max-width:1400px;margin:0 auto;padding:3rem 2.5rem 5rem}
 
 /* SECTION */
 .team-section{margin-bottom:3.5rem}
@@ -138,10 +138,38 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Illinois One Health Scholars Program</div>
-    <h1>The people behind<br><em>One Health Scholars</em> in Illinois</h1>
-    <div class="hero-line"></div>
-    <p class="hero-sub">An interdisciplinary team connecting human, animal, and environmental health across research, policy, and practice.</p>
+    <div style="flex:1;min-width:0;">
+      <div class="hero-eyebrow">Illinois One Health Scholars Program</div>
+      <h1>The people behind<br><em>One Health Scholars</em> in Illinois</h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">An interdisciplinary team connecting human, animal, and environmental health across research, policy, and practice.</p>
+    </div>
+    <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
+      <svg width="350" height="430" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- connections -->
+        <line x1="130" y1="123" x2="130" y2="92" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <line x1="112" y1="136" x2="66" y2="116" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <line x1="148" y1="136" x2="194" y2="116" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <line x1="116" y1="161" x2="84" y2="202" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <line x1="144" y1="161" x2="176" y2="202" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <!-- hub -->
+        <circle cx="130" cy="143" r="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+        <circle cx="130" cy="143" r="8" fill="#E84A27"/>
+        <!-- people -->
+        <g fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5">
+          <circle cx="130" cy="56" r="10"/>
+          <path d="M115 92 a15 15 0 0 1 30 0" fill="none"/>
+          <circle cx="42" cy="100" r="10"/>
+          <path d="M27 136 a15 15 0 0 1 30 0" fill="none"/>
+          <circle cx="218" cy="100" r="10"/>
+          <path d="M203 136 a15 15 0 0 1 30 0" fill="none"/>
+          <circle cx="70" cy="218" r="10"/>
+          <path d="M55 254 a15 15 0 0 1 30 0" fill="none"/>
+          <circle cx="190" cy="218" r="10"/>
+          <path d="M175 254 a15 15 0 0 1 30 0" fill="none"/>
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 
