@@ -39,9 +39,9 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
 /* HERO */
-.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
+.hero{background:var(--navy);padding:3rem 0 2.6rem;position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:center}
 .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.15) 0%,transparent 70%)}
-.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.hero-inner{max-width:1000px;width:100%;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
 .hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
 .hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
 .hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
@@ -124,8 +124,8 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 .sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
 .sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
 .sf-divider{width:1px;height:36px;background:rgba(255,255,255,.12);}
-.sf-links{display:flex;flex-direction:column;gap:.55rem;}
-.sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.sf-links{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.5rem;}
+.sf-links-head{grid-column:1/-1;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
 .sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
 .sf-links a:hover{color:#E84A27;}
 </style>
@@ -143,7 +143,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
     <a href="index.html">Home</a>
     <a href="project.html">Project</a>
     <div class="nav-dropdown">
-      <button class="nav-drop-btn">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+      <button class="nav-drop-btn">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
       <div class="nav-drop-menu">
         <a href="faculty.html">Faculty</a>
         <a href="students.html">Students</a>
@@ -233,7 +233,6 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
   <div class="sf-inner">
     <div>
       <div class="sf-brand">One Health <span>Scholars</span></div>
-      <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
       <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
     </div>
     <div class="sf-partners">

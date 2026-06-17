@@ -38,9 +38,9 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 
 /* HERO */
-.hero{background:var(--navy);padding:4rem 2.5rem 3.5rem;position:relative;overflow:hidden}
+.hero{background:var(--navy);padding:3rem 0 2.6rem;position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:center}
 .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,74,39,.18) 0%,transparent 70%)}
-.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.hero-inner{max-width:1400px;width:100%;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3rem}
 .hero-eyebrow{font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem}
 .hero h1{font-family:'Source Serif 4',serif;font-size:3rem;color:#fff;line-height:1.12;margin-bottom:1rem;font-weight:600}
 .hero h1 em{color:var(--orange);font-style:italic;font-weight:300}
@@ -105,8 +105,8 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 .sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
 .sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
 .sf-divider{width:1px;height:36px;background:rgba(255,255,255,.12);}
-.sf-links{display:flex;flex-direction:column;gap:.55rem;}
-.sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.sf-links{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.5rem;}
+.sf-links-head{grid-column:1/-1;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
 .sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
 .sf-links a:hover{color:#E84A27;}
 </style>
@@ -124,7 +124,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
     <a href="index.html">Home</a>
     <a href="project.html">Project</a>
     <div class="nav-dropdown">
-      <button class="nav-drop-btn">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+      <button class="nav-drop-btn">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
       <div class="nav-drop-menu">
         <a href="faculty.html">Faculty</a>
         <a href="students.html">Students</a>
@@ -145,7 +145,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
       <p class="hero-sub">An interdisciplinary team connecting human, animal, and environmental health across research, policy, and practice.</p>
     </div>
     <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
-      <svg width="385" height="473" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+      <svg width="289" height="355" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
         <!-- connections -->
         <line x1="130" y1="123" x2="130" y2="92" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
         <line x1="112" y1="136" x2="66" y2="116" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 5"/>
@@ -254,13 +254,21 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
           <img src="images/MatthewLeslie.png" alt="Dr. Matthew Leslie">
           <div class="card-photo-accent"></div>
         </div>
-        <div class="card-body simple">
-          <div class="card-name">Dr. Matthew Leslie</div>
-          <div class="card-role">Lead Data Epidemiologist</div>
-          <a class="card-link" href="https://leparvet.net/staff/dr-matthew-leslie/" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Profile
-          </a>
+        <div class="card-body">
+          <div class="card-name">Dr. Matthew Leslie, DVM, PhD</div>
+          <div class="card-role">Laboratory Data &amp; Zoonotic Disease Epidemiologist</div>
+          <div class="card-bio-short" style="margin-bottom:.6rem">
+            Office of Health Protection and Response<br>
+            Communicable Diseases Section<br>
+            Illinois Department of Public Health<br>
+            2121 W. Taylor St. #508, Chicago, Illinois 60612
+          </div>
+          <div style="font-size:.78rem;color:var(--muted);line-height:1.75">
+            <span style="color:var(--text);font-weight:600">Cell:</span> 217-606-1303<br>
+            <span style="color:var(--text);font-weight:600">Office:</span> 312-793-9062<br>
+            <span style="color:var(--text);font-weight:600">CD Main:</span> 217-782-2016
+          </div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:.5rem">(He/Him/His)</div>
         </div>
       </div>
 
@@ -317,7 +325,6 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
   <div class="sf-inner">
     <div>
       <div class="sf-brand">One Health <span>Scholars</span></div>
-      <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
       <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
     </div>
     <div class="sf-partners">

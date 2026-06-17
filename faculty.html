@@ -62,9 +62,13 @@
     /* ── HERO ── */
     .hero {
       background: var(--navy);
-      padding: 4rem 2.5rem 3.5rem;
+      padding: 3rem 0 2.6rem;
       position: relative;
       overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .hero::after {
       content: '';
@@ -76,7 +80,8 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(232,74,39,.18) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    .hero-inner { max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    @media(max-width:560px){ .hero-inner { padding: 0 20px; } }
     .hero-eyebrow {
       font-size: 1rem;
       font-weight: 600;
@@ -413,7 +418,7 @@
       <a href="index.html">Home</a>
       <a href="project.html">Project</a>
       <div class="nav-dropdown">
-        <button class="nav-drop-btn active">2026 One Health Scholars Program <span class="nav-drop-caret">&#9662;</span></button>
+        <button class="nav-drop-btn active">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
         <div class="nav-drop-menu">
           <a href="faculty.html" class="active">Faculty</a>
           <a href="students.html">Students</a>
@@ -435,7 +440,7 @@
         <p class="hero-sub">DPI identified three faculty mentors through a structured call across UIUC, UIC, and UIS, selecting researchers with active One Health-aligned projects, existing Illinois community partnerships, and availability to guide a graduate scholar through the 2026 cohort year.</p>
       </div>
       <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
-        <svg width="385" height="473" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+        <svg width="289" height="355" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
           <!-- professor behind lectern -->
           <circle cx="130" cy="52" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
           <path d="M96 118 a34 34 0 0 1 68 0" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
@@ -459,6 +464,7 @@
   </div>
   <!-- SECTION 1: FACULTY PROFILES -->
   <div style="text-align:center;padding:48px 0 0"><div class="section-label">2026 Faculty Mentors</div></div>
+  <p style="text-align:center;margin:1rem auto 0;font-size:.95rem;color:var(--muted);">Meet the 2026 faculty mentors.</p>
   <div class="cards-section" style="padding-top:1.5rem">
     <div class="cards-grid">
 
@@ -524,6 +530,111 @@
 
     </div>
   </div>
+
+  <!-- VOICES SLIDER -->
+  <style>
+    .vq-section{padding:4.5rem 3rem 5rem;background:var(--cream);--accent:var(--orange);}
+    .vq-inner{max-width:980px;margin:0 auto;}
+    .vq-header{text-align:center;margin-bottom:2.6rem;}
+    .vq-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+    .vq-title{font-family:'Source Serif 4',Georgia,serif;font-size:2rem;font-weight:600;color:#13294B;}
+    .vq-slider{display:flex;align-items:center;gap:1.1rem;}
+    .vq-viewport{position:relative;flex:1;min-width:0;}
+    .vq-slide{display:none;}
+    .vq-slide.active{display:flex;gap:2.4rem;align-items:center;background:#fdf8f0;background-image:radial-gradient(circle,rgba(0,0,0,.08) 1.5px,transparent 1.5px);background-size:22px 22px;border:1px solid #e6ddcd;border-top:4px solid var(--accent);padding:2.8rem 3rem;box-shadow:0 14px 36px rgba(19,41,75,.10);animation:vqFade .4s ease;}
+    @keyframes vqFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .vq-left{flex-shrink:0;width:170px;text-align:center;}
+    .vq-photo{width:118px;height:118px;border-radius:50%;margin:0 auto .9rem;overflow:hidden;border:3px solid var(--accent);background:#13294B;display:flex;align-items:center;justify-content:center;}
+    .vq-photo img{width:100%;height:100%;object-fit:cover;}
+    .vq-photo svg{width:54px;height:54px;fill:rgba(255,255,255,.5);}
+    .vq-name{font-family:'Montserrat',sans-serif;font-size:.74rem;font-weight:700;color:#13294B;letter-spacing:.04em;text-transform:uppercase;line-height:1.3;}
+    .vq-role{font-family:'DM Sans',sans-serif;font-size:.72rem;color:#5a5a5a;margin-top:.3rem;line-height:1.4;}
+    .vq-right{flex:1;min-width:0;}
+    .vq-qmark{font-family:'Source Serif 4',Georgia,serif;font-size:3.4rem;line-height:.4;color:var(--accent);opacity:.3;margin-bottom:.7rem;pointer-events:none;user-select:none;}
+    .vq-quote{font-family:'Source Serif 4',Georgia,serif;font-size:1.02rem;line-height:1.75;color:#13294B;font-style:italic;}
+    .vq-arrow{width:46px;height:46px;border-radius:50%;background:#13294B;color:#fff;border:none;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;line-height:1;transition:background .2s,transform .2s;font-family:'Source Serif 4',Georgia,serif;}
+    .vq-arrow:hover{background:var(--accent);transform:scale(1.08);}
+    .vq-dots{display:flex;justify-content:center;gap:.55rem;margin-top:1.8rem;}
+    .vq-dot{width:10px;height:10px;border-radius:50%;background:#cfd6e0;border:none;cursor:pointer;padding:0;transition:background .2s;}
+    .vq-dot.active{background:var(--accent);}
+    @media(max-width:760px){
+      .vq-slide.active{flex-direction:column;text-align:center;gap:1.4rem;padding:2rem 1.4rem;}
+      .vq-left{width:auto;}
+      .vq-qmark{display:none;}
+      .vq-arrow{width:40px;height:40px;font-size:1.3rem;}
+    }
+  </style>
+
+  <section class="vq-section">
+    <div class="vq-inner">
+      <div class="vq-header">
+        <div class="vq-eyebrow">In Their Own Words</div>
+        <div class="vq-title">Faculty Voices</div>
+      </div>
+      <div class="vq-slider">
+        <button class="vq-arrow" type="button" data-vq-prev aria-label="Previous quote">&#8249;</button>
+        <div class="vq-viewport">
+          <div class="vq-slide active">
+            <div class="vq-left">
+              <div class="vq-photo"><img src="images/Martha.jpeg" alt="Dr. Martha Ann Delaney"></div>
+              <div class="vq-name">Dr. Martha Ann Delaney</div>
+              <div class="vq-role">Zoological Pathology Program · UIUC</div>
+            </div>
+            <div class="vq-right">
+              <div class="vq-qmark">&ldquo;</div>
+              <p class="vq-quote">Working with One Health Scholars has been incredibly rewarding. Watching graduate students connect human, animal, and environmental health research is exactly the kind of interdisciplinary thinking Illinois needs.</p>
+            </div>
+          </div>
+          <div class="vq-slide">
+            <div class="vq-left">
+              <div class="vq-photo"><img src="images/Yu-Sheng                                                    _Lee_ylee317.jpg.jpeg" alt="Dr. Yu-Sheng Lee"></div>
+              <div class="vq-name">Dr. Yu-Sheng Lee</div>
+              <div class="vq-role">Integrated Sciences, Sustainability, and Public Health · UIS</div>
+            </div>
+            <div class="vq-right">
+              <div class="vq-qmark">&ldquo;</div>
+              <p class="vq-quote">This program fills a critical gap in public health training. Our scholars bring fresh perspectives to longstanding research challenges, and the mentorship model creates lasting professional relationships across disciplines.</p>
+            </div>
+          </div>
+          <div class="vq-slide">
+            <div class="vq-left">
+              <div class="vq-photo"><img src="images/Sheetal.jpeg" alt="Dr. Sheetal Khedkar Rao"></div>
+              <div class="vq-name">Dr. Sheetal Khedkar Rao</div>
+              <div class="vq-role">Internal Medicine, UI Health · UIC</div>
+            </div>
+            <div class="vq-right">
+              <div class="vq-qmark">&ldquo;</div>
+              <p class="vq-quote">One Health is the future of public health practice. This program gives scholars the tools and real-world experience to lead that charge in Illinois communities, bridging the gap between academic research and meaningful practice.</p>
+            </div>
+          </div>
+        </div>
+        <button class="vq-arrow" type="button" data-vq-next aria-label="Next quote">&#8250;</button>
+      </div>
+      <div class="vq-dots">
+        <button class="vq-dot active" type="button" data-vq-dot aria-label="Go to quote 1"></button>
+        <button class="vq-dot" type="button" data-vq-dot aria-label="Go to quote 2"></button>
+        <button class="vq-dot" type="button" data-vq-dot aria-label="Go to quote 3"></button>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var section = document.currentScript.previousElementSibling;
+    var slides = section.querySelectorAll('.vq-slide');
+    var dots = section.querySelectorAll('[data-vq-dot]');
+    var idx = 0, timer;
+    function show(n){
+      idx = (n + slides.length) % slides.length;
+      slides.forEach(function(s,k){ s.classList.toggle('active', k===idx); });
+      dots.forEach(function(d,k){ d.classList.toggle('active', k===idx); });
+    }
+    function reset(){ clearInterval(timer); timer = setInterval(function(){ show(idx+1); }, 5000); }
+    section.querySelector('[data-vq-prev]').addEventListener('click', function(){ show(idx-1); reset(); });
+    section.querySelector('[data-vq-next]').addEventListener('click', function(){ show(idx+1); reset(); });
+    dots.forEach(function(d,k){ d.addEventListener('click', function(){ show(k); reset(); }); });
+    reset();
+  })();
+  </script>
 
   <!-- SECTION 2: ONE HEALTH PROJECTS -->
   <div class="section-gap"></div>
@@ -749,8 +860,8 @@
     .sf-logo-block{width:52px;height:52px;border-radius:8px;background:#E84A27;display:flex;align-items:center;justify-content:center;color:#fff;}
     .sf-partner-label{font-size:.6rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
     .sf-divider{width:1px;height:36px;background:rgba(255,255,255,.12);}
-    .sf-links{display:flex;flex-direction:column;gap:.55rem;}
-    .sf-links-head{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+    .sf-links{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.5rem;}
+    .sf-links-head{grid-column:1/-1;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
     .sf-links a{font-size:1rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
     .sf-links a:hover{color:#E84A27;}
   </style>
@@ -802,103 +913,11 @@
     </div>
   </section>
 
-  <!-- VOICES QUOTES -->
-  <style>
-    .sq-section{padding:5rem 3rem 6rem;background:#fdf8f0;background-image:radial-gradient(circle,rgba(0,0,0,.10) 1.5px,transparent 1.5px);background-size:22px 22px;}
-    .sq-inner{max-width:1200px;margin:0 auto;}
-    .sq-header{text-align:center;margin-bottom:3.5rem;}
-    .sq-eyebrow{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.38rem 1.1rem;border:2.5px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;margin-bottom:.9rem;}
-    .sq-title{display:block;font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#13294B;text-transform:uppercase;letter-spacing:.06em;}
-    .sq-grid{display:flex;flex-direction:column;gap:0;}
-    .sq-card{display:flex;flex-direction:column;width:65%;max-width:780px;}
-    .sq-card--right{align-self:flex-end;}
-    .sq-card--right .sq-bubble::before{left:auto;right:38px;border-top:20px solid #1a1a1a;border-left:5px solid transparent;border-right:16px solid transparent;}
-    .sq-card--right .sq-bubble::after{left:auto;right:42px;border-top:14px solid #fff;border-left:3px solid transparent;border-right:11px solid transparent;}
-    .sq-card--right .sq-speaker{margin-left:auto;margin-right:16px;align-self:flex-end;}
-    .sq-bubble{position:relative;background:#fff;border:3.5px solid #1a1a1a;box-shadow:-8px 8px 0 #1a1a1a;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;}
-    .sq-bubble:hover{transform:translate(3px,-3px);box-shadow:-11px 11px 0 #1a1a1a;}
-    .sq-bubble::before{content:'';position:absolute;bottom:-20px;left:38px;width:0;height:0;border-top:20px solid #1a1a1a;border-left:16px solid transparent;border-right:5px solid transparent;z-index:1;}
-    .sq-bubble::after{content:'';position:absolute;bottom:-14px;left:42px;width:0;height:0;border-top:14px solid #fff;border-left:11px solid transparent;border-right:3px solid transparent;z-index:2;}
-    .sq-panel-bar{height:9px;background:var(--orange);border-bottom:2.5px solid #1a1a1a;flex-shrink:0;}
-    .sq-body{padding:1.75rem 1.6rem 1.25rem;position:relative;overflow:hidden;}
-    .sq-qmark{font-family:'Source Serif 4',Georgia,serif;font-size:7rem;line-height:.9;color:var(--orange);opacity:.13;position:absolute;top:.4rem;left:.8rem;font-weight:900;pointer-events:none;user-select:none;}
-    .sq-quote{font-family:'Source Serif 4',Georgia,serif;font-size:.87rem;line-height:1.8;color:#1a1a1a;position:relative;z-index:1;padding-top:1.25rem;}
-    .sq-speaker{margin-top:14px;margin-left:16px;align-self:flex-start;display:flex;align-items:center;gap:.75rem;background:#13294B;border:2.5px solid #1a1a1a;box-shadow:-4px 4px 0 #1a1a1a;padding:.55rem .9rem .55rem .7rem;}
-    .sq-avatar{width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.5);object-fit:cover;flex-shrink:0;}
-    .sq-name{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;color:#fff;letter-spacing:.05em;text-transform:uppercase;line-height:1.3;}
-    .sq-role{font-family:'DM Sans',sans-serif;font-size:.62rem;color:rgba(255,255,255,.5);margin-top:.18rem;}
-    @media(max-width:900px){.sq-card,.sq-card--right{width:100%;align-self:auto;}.sq-card--right .sq-speaker{margin-left:16px;margin-right:0;align-self:flex-start;}}
-  </style>
-
-  <section class="sq-section">
-    <div class="sq-inner">
-      <div class="sq-header">
-        <div class="sq-eyebrow">In Their Own Words</div>
-        <span class="sq-title">Faculty Voices</span>
-      </div>
-      <div class="sq-grid">
-
-        <div class="sq-card">
-          <div class="sq-bubble">
-            <div class="sq-panel-bar"></div>
-            <div class="sq-body">
-              <div class="sq-qmark">"</div>
-              <p class="sq-quote">Working with One Health Scholars has been incredibly rewarding. Watching graduate students connect human, animal, and environmental health research is exactly the kind of interdisciplinary thinking Illinois needs.</p>
-            </div>
-          </div>
-          <div class="sq-speaker">
-            <img src="images/Martha.jpeg" alt="Dr. Martha Ann Delaney" class="sq-avatar">
-            <div>
-              <div class="sq-name">Dr. Martha Ann Delaney</div>
-              <div class="sq-role">Zoological Pathology Program · UIUC</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sq-card sq-card--right">
-          <div class="sq-bubble">
-            <div class="sq-panel-bar"></div>
-            <div class="sq-body">
-              <div class="sq-qmark">"</div>
-              <p class="sq-quote">This program fills a critical gap in public health training. Our scholars bring fresh perspectives to longstanding research challenges, and the mentorship model creates lasting professional relationships across disciplines.</p>
-            </div>
-          </div>
-          <div class="sq-speaker">
-            <img src="images/Yu-Sheng                                                    _Lee_ylee317.jpg.jpeg" alt="Dr. Yu-Sheng Lee" class="sq-avatar">
-            <div>
-              <div class="sq-name">Dr. Yu-Sheng Lee</div>
-              <div class="sq-role">Integrated Sciences, Sustainability, and Public Health · UIS</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sq-card">
-          <div class="sq-bubble">
-            <div class="sq-panel-bar"></div>
-            <div class="sq-body">
-              <div class="sq-qmark">"</div>
-              <p class="sq-quote">One Health is the future of public health practice. This program gives scholars the tools and real-world experience to lead that charge in Illinois communities, bridging the gap between academic research and meaningful practice.</p>
-            </div>
-          </div>
-          <div class="sq-speaker">
-            <img src="images/Sheetal.jpeg" alt="Dr. Sheetal Khedkar Rao" class="sq-avatar">
-            <div>
-              <div class="sq-name">Dr. Sheetal Khedkar Rao</div>
-              <div class="sq-role">Internal Medicine, UI Health · UIC</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="sf-inner">
       <div>
         <div class="sf-brand">One Health <span>Scholars</span></div>
-        <p class="sf-desc">An interdisciplinary program connecting graduate scholars with faculty mentors to advance human, animal, and environmental health research across Illinois communities.</p>
         <p class="sf-copy">© 2026 Illinois One Health Scholars Pilot Program. All rights reserved.</p>
       </div>
       <div class="sf-partners">
