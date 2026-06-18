@@ -68,7 +68,7 @@
       min-height: 580px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .hero::after {
       content: '';
@@ -80,7 +80,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(232,74,39,.18) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    .hero-inner { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 3rem; }
     @media(max-width:560px){ .hero-inner { padding: 0 20px; } }
     .hero-eyebrow {
       font-size: 1rem;
@@ -133,9 +133,9 @@
 
     /* ── CARDS SECTION ── */
     .cards-section {
-      max-width: 1400px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 48px 48px 0;
+      padding: 48px 2.5rem 0;
     }
     .section-label {
       display: inline-block;
@@ -479,7 +479,7 @@
             <div class="card-credentials">DVM, MS, PhD, Dipl. ACVP</div>
             <div class="card-title">Clinical Associate Professor</div>
             <div class="card-dept">Zoological Pathology Program</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Dr. Delaney specializes in infectious diseases of wildlife and pathological interactions with the innate immune system. Based at Brookfield Zoo Chicago, she has collaborated with Cook County Animal and Rabies Control for over 20 years.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Dr. Delaney specializes in infectious diseases of wildlife and their interaction with the innate immune system. She is based at Brookfield Zoo Chicago and partners with Cook County Animal and Rabies Control.</p>
           </div>
           <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -519,7 +519,7 @@
             <div class="card-credentials">MD</div>
             <div class="card-title">Assistant Professor of Clinical Medicine</div>
             <div class="card-dept">Internal Medicine, UI Health</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Dr. Rao is an internal medicine physician at UI Health with a focus on the impact of environment on individual and community wellbeing. She specializes in chronic disease management with deep community ties through her work in the Markham, IL area.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Dr. Rao is an internal medicine physician at UI Health focused on the impact of environment on community wellbeing. She specializes in chronic disease management, with deep ties to the Markham, IL community.</p>
           </div>
           <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -533,7 +533,7 @@
 
   <!-- VOICES SLIDER -->
   <style>
-    .vq-section{padding:4.5rem 3rem 5rem;background:var(--cream);--accent:var(--orange);}
+    .vq-section{padding:1rem 3rem 4rem;background:var(--cream);--accent:var(--orange);}
     .vq-inner{max-width:980px;margin:0 auto;}
     .vq-header{text-align:center;margin-bottom:2.6rem;}
     .vq-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
@@ -567,10 +567,6 @@
 
   <section class="vq-section">
     <div class="vq-inner">
-      <div class="vq-header">
-        <div class="vq-eyebrow">In Their Own Words</div>
-        <div class="vq-title">Faculty Voices</div>
-      </div>
       <div class="vq-slider">
         <button class="vq-arrow" type="button" data-vq-prev aria-label="Previous quote">&#8249;</button>
         <div class="vq-viewport">

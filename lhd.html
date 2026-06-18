@@ -71,7 +71,7 @@
       min-height: 580px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .hero::after {
       content: '';
@@ -83,7 +83,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(232,74,39,.18) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    .hero-inner { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 3rem; }
     @media(max-width:560px){ .hero-inner { padding: 0 20px; } }
     .hero-eyebrow {
       font-size: 1rem;
@@ -112,9 +112,9 @@
 
     /* ── CARDS SECTION ── */
     .cards-section {
-      max-width: 1400px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 48px 48px 0;
+      padding: 48px 2.5rem 0;
     }
     .section-label {
       display: inline-block;
@@ -393,18 +393,11 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="lhd-badge">
-            <svg viewBox="0 0 24 24">
-              <path d="M3 22V10l9-8 9 8v12H3z"/>
-              <path d="M9 22V15h6v7"/>
-              <path d="M12 3v2M5 10h14"/>
-            </svg>
-          </div>
-          <div class="avatar">CD</div>
+          <div class="avatar"><img src="images/chicagohealth.png" alt="Chicago Department of Public Health"></div>
           <div>
             <div class="card-name">Chicago Department of Public Health</div>
             <div class="card-credentials">CDPH · City of Chicago</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">The Chicago Department of Public Health works to make Chicago a safer and healthier city by promoting health, preventing disease, reducing environmental hazards, and ensuring equitable access to healthcare through community partnerships. In collaboration with the One Health Program and CDPH, scholars will develop and analyze a Knowledge, Attitudes, and Beliefs (KAB) survey to assess public understanding of vector-borne diseases and create targeted educational materials based on findings, as well as develop veterinary infection control guidance and assist veterinary clinics in conducting infection control assessments to enhance disease prevention.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">The Chicago Department of Public Health works to make Chicago a safer, healthier city by promoting health, preventing disease, and ensuring equitable access to care. With the One Health Program and CDPH, scholars will develop a Knowledge, Attitudes, and Beliefs (KAB) survey on vector-borne diseases and help veterinary clinics conduct infection control assessments to strengthen disease prevention.</p>
           </div>
         </div>
       </div>
@@ -413,18 +406,11 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="lhd-badge">
-            <svg viewBox="0 0 24 24">
-              <path d="M3 22V10l9-8 9 8v12H3z"/>
-              <path d="M9 22V15h6v7"/>
-              <path d="M12 3v2M5 10h14"/>
-            </svg>
-          </div>
-          <div class="avatar">CU</div>
+          <div class="avatar"><img src="images/cuphd.png" alt="Champaign-Urbana Public Health District"></div>
           <div>
             <div class="card-name">Champaign-Urbana Public Health District</div>
             <div class="card-credentials">CUPHD · Champaign County</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Committed to advancing equity and improving community well-being, the Champaign-Urbana Public Health District promotes health and safety through education, preparedness, partnerships, and public health initiatives. In collaboration with the One Health Program and CUPHD, scholars will build and organize zoonotic disease information on public health websites in alphabetical order and assist with One Health-related projects that support community education and disease prevention efforts within the health district.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Committed to advancing equity and community well-being, the Champaign-Urbana Public Health District promotes health and safety through education, preparedness, and partnerships. With the One Health Program and CUPHD, scholars will organize zoonotic disease information for public health websites and assist with One Health projects that support community education and disease prevention across the health district.</p>
           </div>
         </div>
       </div>
@@ -433,18 +419,11 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="profile-top">
-          <div class="lhd-badge">
-            <svg viewBox="0 0 24 24">
-              <path d="M3 22V10l9-8 9 8v12H3z"/>
-              <path d="M9 22V15h6v7"/>
-              <path d="M12 3v2M5 10h14"/>
-            </svg>
-          </div>
-          <div class="avatar">WC</div>
+          <div class="avatar"><img src="images/woodford.jpg" alt="Woodford County Health Department"></div>
           <div>
             <div class="card-name">Woodford County Health Department</div>
             <div class="card-credentials">WCHD · Woodford County</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">The Woodford County Health Department promotes and protects the health and well-being of its residents through disease prevention, health education, environmental health initiatives, and accessible public health services. In collaboration with the One Health Program, scholars will develop four seasonal environmental health snapshots to identify and communicate emerging health trends, and create and update a quarterly Woodford County Zoonotic Risk Map to monitor zoonotic disease risks.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">The Woodford County Health Department promotes and protects residents' health through disease prevention, health education, environmental health initiatives, and accessible public health services. With the One Health Program, scholars will develop four seasonal environmental health snapshots to communicate emerging health trends and build a quarterly Woodford County Zoonotic Risk Map to monitor zoonotic disease risks.</p>
           </div>
         </div>
       </div>
@@ -454,7 +433,7 @@
 
   <!-- VOICES SLIDER -->
   <style>
-    .vq-section{padding:4.5rem 3rem 5rem;background:var(--cream);--accent:var(--violet);}
+    .vq-section{padding:1rem 3rem 4rem;background:var(--cream);--accent:var(--violet);}
     .vq-inner{max-width:980px;margin:0 auto;}
     .vq-header{text-align:center;margin-bottom:2.6rem;}
     .vq-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
@@ -488,10 +467,6 @@
 
   <section class="vq-section">
     <div class="vq-inner">
-      <div class="vq-header">
-        <div class="vq-eyebrow">In Their Own Words</div>
-        <div class="vq-title">Partner Voices</div>
-      </div>
       <div class="vq-slider">
         <button class="vq-arrow" type="button" data-vq-prev aria-label="Previous quote">&#8249;</button>
         <div class="vq-viewport">

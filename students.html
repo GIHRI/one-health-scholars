@@ -71,7 +71,7 @@
       min-height: 580px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .hero::after {
       content: '';
@@ -83,7 +83,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(232,74,39,.18) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    .hero-inner { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 3rem; }
     @media(max-width:560px){ .hero-inner { padding: 0 20px; } }
     .hero-eyebrow {
       font-size: 1rem;
@@ -112,9 +112,9 @@
 
     /* ── CARDS SECTION ── */
     .cards-section {
-      max-width: 1400px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 48px 48px 0;
+      padding: 48px 2.5rem 0;
     }
     .section-label {
       display: inline-block;
@@ -317,7 +317,7 @@
             <div class="card-credentials">MPH, Biostatistics</div>
 
             <div class="card-dept">University of Illinois Chicago</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Haley recently earned her MPH in Biostatistics from the University of Illinois Chicago and holds a Bachelor's in Integrative Biology from the University of Illinois Urbana-Champaign. Her background in tick ecology research drives a strong interest in emerging One Health challenges, and she is focused on applying evidence-based practices to tackle them.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Haley earned her MPH in Biostatistics from the University of Illinois Chicago and a Bachelor's in Integrative Biology from UIUC. Her background in tick ecology research drives a strong interest in applying evidence-based practices to emerging One Health challenges.</p>
           </div>
           <a class="card-link" href="https://www.linkedin.com/in/haley-elmer-mph-19991b29b" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -337,7 +337,7 @@
             <div class="card-credentials">MPH, Community Health Sciences</div>
 
             <div class="card-dept">University of Illinois Chicago</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Alyah recently earned her MPH from the University of Illinois Chicago with a concentration in Community Health Sciences. Her work spans public health research, community engagement, and program implementation, with a particular interest in health equity, chronic disease prevention, and using data to improve health outcomes in underserved communities.</p>
+            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Alyah earned her MPH from the University of Illinois Chicago with a concentration in Community Health Sciences. Her work spans public health research, community engagement, and program implementation, with a focus on health equity and chronic disease prevention.</p>
           </div>
           <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -351,7 +351,7 @@
 
   <!-- VOICES SLIDER -->
   <style>
-    .vq-section{padding:4.5rem 3rem 5rem;background:var(--cream);--accent:var(--teal);}
+    .vq-section{padding:1rem 3rem 4rem;background:var(--cream);--accent:var(--teal);}
     .vq-inner{max-width:980px;margin:0 auto;}
     .vq-header{text-align:center;margin-bottom:2.6rem;}
     .vq-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
@@ -385,10 +385,6 @@
 
   <section class="vq-section">
     <div class="vq-inner">
-      <div class="vq-header">
-        <div class="vq-eyebrow">In Their Own Words</div>
-        <div class="vq-title">Scholar Voices</div>
-      </div>
       <div class="vq-slider">
         <button class="vq-arrow" type="button" data-vq-prev aria-label="Previous quote">&#8249;</button>
         <div class="vq-viewport">
