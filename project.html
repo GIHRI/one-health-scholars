@@ -61,6 +61,12 @@ body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 .measure{max-width:1040px}
 section[id]{scroll-margin-top:80px}
 
+/* ── OVERVIEW (text + image) ── */
+.overview-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.overview-text{min-width:0}
+.overview-media{margin:0}
+.overview-media img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 16px 40px rgba(19,41,75,.14)}
+
 /* ── TABLE OF CONTENTS ── */
 .toc{background:#fff;border-bottom:1px solid var(--border)}
 .toc-inner{max-width:1280px;margin:0 auto;padding:1.6rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -76,7 +82,7 @@ section[id]{scroll-margin-top:80px}
 .sec-rule{height:1px;background:var(--border);margin-bottom:2rem}
 .phase-list{list-style:none;margin-top:1.2rem}
 .phase-list-label{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:.6rem;padding-top:1rem;border-top:1px solid var(--border)}
-.phase-list li{position:relative;padding-left:1rem;font-size:.78rem;line-height:1.5;color:var(--gray-600);min-height:2.3em;margin-bottom:.5rem}
+.phase-list li{position:relative;padding-left:1rem;font-size:.78rem;line-height:1.5;color:var(--gray-600);min-height:3em;margin-bottom:.5rem}
 .phase-list li:last-child{margin-bottom:0}
 .phase-list li::before{content:'';position:absolute;left:0;top:.5rem;width:5px;height:5px;border-radius:50%;background:var(--orange)}
 
@@ -105,7 +111,7 @@ section[id]{scroll-margin-top:80px}
 .phase-num{font-family:var(--serif);font-size:2.1rem;font-weight:300;color:rgba(232,74,39,.45);line-height:1}
 .phase-name{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
 .phase-bar{height:3px;background:var(--orange);width:34px;margin-bottom:1rem}
-.phase-body{font-size:.84rem;line-height:1.75;color:var(--gray-600);min-height:4.4em}
+.phase-body{font-size:.84rem;line-height:1.75;color:var(--gray-600);min-height:5.5em}
 
 /* ── TIMELINE: vertical rail ── */
 .timeline{background:var(--navy);border-top:1px solid var(--border)}
@@ -192,6 +198,7 @@ section[id]{scroll-margin-top:80px}
 @media(max-width:900px){
   .hero h1{font-size:2.2rem}
   .toc-inner{flex-wrap:wrap;justify-content:flex-start;gap:.7rem 1.4rem}
+  .overview-grid{grid-template-columns:1fr;gap:2rem}
   .why-grid{grid-template-columns:1fr;gap:2.2rem}
   .journey-grid{grid-template-columns:1fr 1fr}
   .phase:nth-child(2){border-right:none}
@@ -265,10 +272,14 @@ section[id]{scroll-margin-top:80px}
   <div class="doc">
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Program Overview</h2></div>
     <div class="sec-rule"></div>
-    <div class="measure">
-      <p class="lead">The Illinois One Health Scholars Program is a unique workforce development initiative designed to prepare future leaders to address complex challenges at the intersection of human, animal, and environmental health.</p>
-      <p class="prose" style="margin-top:1.6rem;">Through research mentorship, applied public health experience, and interdisciplinary collaboration, scholars gain the knowledge, skills, and practical experience needed to advance One Health solutions across Illinois.</p>
-      <p class="prose">The program bridges academic research and public health practice by connecting students, researchers, and Local Health Departments in a shared effort to <strong>strengthen health systems and improve community well-being.</strong></p>
+    <div class="overview-grid">
+      <div class="overview-text">
+        <p class="lead">The Illinois One Health Scholars Program is a unique workforce development initiative designed to prepare future leaders to address complex challenges at the intersection of human, animal, and environmental health.</p>
+        <p class="prose" style="margin-top:1.6rem;">The program bridges academic research and public health practice by connecting students, researchers, and Local Health Departments in a shared effort to <strong>strengthen health systems and improve community well-being.</strong></p>
+      </div>
+      <figure class="overview-media">
+        <img src="images/preview.webp" alt="Public health professionals and clinicians walking together in a modern facility">
+      </figure>
     </div>
   </div>
 </section>
@@ -450,13 +461,13 @@ section[id]{scroll-margin-top:80px}
       <div class="dual-panel dual-panel--l">
         <div class="dual-kicker">Investment One</div>
         <div class="dual-title">Tomorrow's Professionals</div>
-        <p class="dual-desc">Developing future One Health professionals: scholars trained through research and a year of real field practice.</p>
+        <p class="dual-desc">Developing future One Health professionals: scholars trained through research and a year of field practice.</p>
       </div>
       <div class="dual-conn"><span>&amp;</span></div>
       <div class="dual-panel dual-panel--r">
         <div class="dual-kicker">Investment Two</div>
         <div class="dual-title">Today's Workforce</div>
-        <p class="dual-desc">Strengthening the capacity of today's public health workforce through faculty-built One Health training delivered statewide.</p>
+        <p class="dual-desc">Strengthening today's public health workforce: practitioners supported through faculty-built One Health training delivered across Illinois.</p>
       </div>
     </div>
 
