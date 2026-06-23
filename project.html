@@ -122,18 +122,18 @@ section[id]{scroll-margin-top:80px}
 .tl-hint{font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;margin-bottom:2.4rem}
 .tl-track{position:relative}
 .tl-track::before{content:'';position:absolute;top:72px;left:8%;right:8%;height:2px;background:rgba(255,255,255,.16);z-index:0}
-.tl-nodes{display:grid;grid-template-columns:repeat(6,1fr);position:relative;z-index:1;text-align:center}
-.tl-node{cursor:pointer;padding:0 .5rem}
-.tl-phase{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:rgba(232,74,39,.12);border:1px solid rgba(232,74,39,.35);padding:.18rem .55rem;margin-bottom:.55rem}
+.tl-nodes{display:grid;grid-template-columns:repeat(8,1fr);position:relative;z-index:1;text-align:center}
+.tl-node{cursor:pointer;padding:0 .25rem}
+.tl-phase{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.44rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:rgba(232,74,39,.12);border:1px solid rgba(232,74,39,.35);padding:.15rem .4rem;margin-bottom:.45rem}
 .tl-phase--alt{color:#bcd0f0;background:rgba(120,160,220,.1);border-color:rgba(120,160,220,.35)}
-.tl-date{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.06em;margin-bottom:.6rem;text-transform:uppercase}
+.tl-date{font-size:.56rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.05em;margin-bottom:.5rem;text-transform:uppercase}
 .tl-dot{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid var(--navy);box-shadow:0 0 0 2px rgba(255,255,255,.25);margin:0 auto .6rem;transition:background .2s,box-shadow .2s}
-.tl-label{font-size:.74rem;font-weight:600;color:rgba(255,255,255,.85);line-height:1.3}
+.tl-label{font-size:.66rem;font-weight:600;color:rgba(255,255,255,.85);line-height:1.3}
 .tl-node:hover .tl-dot{background:#fff;box-shadow:0 0 0 2px #fff}
 .tl-node.active .tl-dot{background:var(--orange);box-shadow:0 0 0 3px rgba(232,74,39,.35)}
 .tl-node.active .tl-date,.tl-node.active .tl-label{color:var(--orange)}
 .tl-panel{display:none;background:#fff;border-radius:14px;border-left:4px solid var(--orange);padding:1.5rem 2rem;margin-top:2.2rem;font-size:.86rem;color:var(--gray-600);line-height:1.8;animation:fadeSlide .25s ease}
-.tl-panel strong{display:block;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:.5rem}
+.tl-panel strong{display:block;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(0,0,0,.08)}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── EXPERIENCE: three tracks ── */
@@ -204,7 +204,7 @@ section[id]{scroll-margin-top:80px}
   .phase:nth-child(2){border-right:none}
   .phase:nth-child(1),.phase:nth-child(2){border-bottom:1px solid var(--border)}
   .exp-grid{grid-template-columns:1fr}
-  .tl-nodes{grid-template-columns:repeat(3,1fr);row-gap:2rem}
+  .tl-nodes{grid-template-columns:repeat(4,1fr);row-gap:2rem}
   .tl-track::before{display:none}
   .dual-grid{grid-template-columns:1fr}
   .dual-panel--l{border-right:1px solid var(--border);border-bottom:none}
@@ -278,7 +278,7 @@ section[id]{scroll-margin-top:80px}
         <p class="prose" style="margin-top:1.6rem;">The program bridges academic research and public health practice by connecting students, researchers, and Local Health Departments in a shared effort to <strong>strengthen health systems and improve community well-being.</strong></p>
       </div>
       <figure class="overview-media">
-        <img src="images/preview.webp" alt="Public health professionals and clinicians walking together in a modern facility">
+        <img src="images/femaledoctors.jpg" alt="Public health professionals and clinicians walking together in a modern facility">
       </figure>
     </div>
   </div>
@@ -292,7 +292,8 @@ section[id]{scroll-margin-top:80px}
     <div class="why-grid">
       <div>
         <p class="prose">The health of people, animals, and the environment is deeply interconnected. Emerging infectious diseases, climate change, environmental degradation, food systems, water quality, and community health inequities do not occur in isolation.</p>
-        <p class="prose">Addressing these challenges requires professionals who can work across disciplines, integrate diverse perspectives, and develop solutions that recognize these connections. <strong>The One Health Scholars Program was created to help build this next generation of leaders.</strong></p>
+        <p class="prose">Addressing these challenges requires professionals who can work across disciplines, integrate diverse perspectives, and develop solutions that recognize these connections.</p>
+        <p class="prose"><strong>The One Health Scholars Program was created to help build this next generation of leaders.</strong></p>
       </div>
       <div class="pillars-stack">
         <div class="pillar-row">
@@ -383,66 +384,86 @@ section[id]{scroll-margin-top:80px}
     <div class="tl-track">
       <div class="tl-nodes">
         <div class="tl-node" onclick="tlActivate(this,0)">
-          <div><span class="tl-phase">Select</span></div>
+          <div><span class="tl-phase">Launch</span></div>
           <div class="tl-date">Jan 2026</div>
           <div class="tl-dot"></div>
-          <div class="tl-label">Cohort Selected</div>
+          <div class="tl-label">Project Begins</div>
         </div>
         <div class="tl-node" onclick="tlActivate(this,1)">
-          <div><span class="tl-phase">Discover</span></div>
-          <div class="tl-date">Feb 2026</div>
+          <div><span class="tl-phase">Select</span></div>
+          <div class="tl-date">Mar 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Faculty Selected</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,2)">
+          <div><span class="tl-phase">Select</span></div>
+          <div class="tl-date">Apr 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Scholars Selected</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,3)">
+          <div><span class="tl-phase tl-phase--alt">Partner</span></div>
+          <div class="tl-date">May 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">LHDs Selected</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,4)">
+          <div><span class="tl-phase">Engage</span></div>
+          <div class="tl-date">Jun 2026</div>
           <div class="tl-dot"></div>
           <div class="tl-label">Mentorship Begins</div>
         </div>
-        <div class="tl-node" onclick="tlActivate(this,2)">
-          <div><span class="tl-phase">Discover</span></div>
-          <div class="tl-date">Mar 2026</div>
-          <div class="tl-dot"></div>
-          <div class="tl-label">Field Research</div>
-        </div>
-        <div class="tl-node" onclick="tlActivate(this,3)">
-          <div><span class="tl-phase tl-phase--alt">Statewide</span></div>
-          <div class="tl-date">Apr 2026</div>
-          <div class="tl-dot"></div>
-          <div class="tl-label">Modules Delivered</div>
-        </div>
-        <div class="tl-node" onclick="tlActivate(this,4)">
-          <div><span class="tl-phase tl-phase--alt">Statewide</span></div>
-          <div class="tl-date">Summer 2026</div>
-          <div class="tl-dot"></div>
-          <div class="tl-label">Stakeholder Review</div>
-        </div>
         <div class="tl-node" onclick="tlActivate(this,5)">
-          <div><span class="tl-phase">Apply &amp; Lead</span></div>
-          <div class="tl-date">2027</div>
+          <div><span class="tl-phase tl-phase--alt">Deliver</span></div>
+          <div class="tl-date">Aug 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Modules Launched</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,6)">
+          <div><span class="tl-phase">Apply</span></div>
+          <div class="tl-date">Sep 2026</div>
           <div class="tl-dot"></div>
           <div class="tl-label">Scholars Placed</div>
+        </div>
+        <div class="tl-node" onclick="tlActivate(this,7)">
+          <div><span class="tl-phase">Apply</span></div>
+          <div class="tl-date">Sep 2027</div>
+          <div class="tl-dot"></div>
+          <div class="tl-label">Placement Complete</div>
         </div>
       </div>
       <div id="tl-panels">
         <div class="tl-panel" id="tl-panel-0">
-          <strong>Cohort Selected, January 2026</strong>
-          A small cohort of graduate scholars is chosen through a competitive application process, selected for academic excellence, leadership potential, and a drive to improve community health across Illinois.
+          <strong>Project Begins, January 2026</strong>
+          The One Health Scholars Program officially launches, establishing the program framework, partnerships, and operational infrastructure to support the inaugural 2026 cohort.
         </div>
         <div class="tl-panel" id="tl-panel-1">
-          <strong>Mentorship Begins, February 2026</strong>
-          Each of the three faculty mentors is matched with a graduate scholar. Scholars are oriented to their project scope, introduced to community partners, and begin structured weekly check-ins with their mentor.
+          <strong>Faculty Selected, March 2026</strong>
+          Faculty mentors are identified and confirmed from across the University of Illinois system, each bringing expertise at the intersection of human, animal, and environmental health.
         </div>
         <div class="tl-panel" id="tl-panel-2">
-          <strong>Field Research, March 2026</strong>
-          Scholars move into active data collection and community engagement. Projects span Cook County wildlife surveillance, county-level maternal health modeling, and greenspace biodiversity assessment in Markham, IL.
+          <strong>Scholars Cohort Selected, April 2026</strong>
+          A competitive cohort of graduate scholars is chosen for academic excellence, leadership potential, and commitment to advancing community health across Illinois.
         </div>
         <div class="tl-panel" id="tl-panel-3">
-          <strong>Course Modules Delivered, April 2026</strong>
-          Faculty submit four completed One Health training modules to DPI. Each module is reviewed for accuracy, accessibility, and alignment with Illinois public health workforce needs before final production.
+          <strong>LHDs Selected, May 2026</strong>
+          Local Health Department partners are confirmed, connecting scholars with field sites across the state and grounding program activities in real-world public health practice.
         </div>
         <div class="tl-panel" id="tl-panel-4">
-          <strong>Stakeholder Review, Summer 2026</strong>
-          DPI and IDPH host a One Health Stakeholder Course Feedback event. Public health practitioners, local health department staff, and community partners review module content and provide structured feedback before statewide rollout.
+          <strong>Mentorship Begins, June 2026</strong>
+          Scholars are matched with faculty mentors, oriented to their project scope, and begin structured engagement with community partners and local health department sites.
         </div>
         <div class="tl-panel" id="tl-panel-5">
-          <strong>Scholars Placed, 2027</strong>
-          Graduate scholars complete the program and enter the Illinois public health workforce as trained One Health coordinators, carrying applied research experience and cross-sector relationships built during the 2026 cohort year.
+          <strong>Modules Launched, August 2026</strong>
+          One Health training modules developed by faculty are finalized and launched through the Division of Public Interest, ready for statewide use by public health practitioners.
+        </div>
+        <div class="tl-panel" id="tl-panel-6">
+          <strong>Scholars Placed, September 2026</strong>
+          Scholars begin their placements at local health departments, applying research skills and One Health frameworks to active public health challenges in their assigned communities.
+        </div>
+        <div class="tl-panel" id="tl-panel-7">
+          <strong>Placement Complete, September 2027</strong>
+          Scholars complete their year-long placement, entering the Illinois public health workforce as trained One Health professionals with field experience and statewide partner relationships.
         </div>
       </div>
     </div>
@@ -460,14 +481,14 @@ section[id]{scroll-margin-top:80px}
     <div class="dual-grid">
       <div class="dual-panel dual-panel--l">
         <div class="dual-kicker">Investment One</div>
-        <div class="dual-title">Tomorrow's Professionals</div>
-        <p class="dual-desc">Developing future One Health professionals: scholars trained through research and a year of field practice.</p>
+        <div class="dual-title">Today's Workforce</div>
+        <p class="dual-desc">Strengthening today's public health workforce: practitioners supported through faculty-built One Health training delivered across Illinois.</p>
       </div>
       <div class="dual-conn"><span>&amp;</span></div>
       <div class="dual-panel dual-panel--r">
         <div class="dual-kicker">Investment Two</div>
-        <div class="dual-title">Today's Workforce</div>
-        <p class="dual-desc">Strengthening today's public health workforce: practitioners supported through faculty-built One Health training delivered across Illinois.</p>
+        <div class="dual-title">Tomorrow's Professionals</div>
+        <p class="dual-desc">Developing future One Health professionals: scholars trained through research and a year of field practice.</p>
       </div>
     </div>
 
