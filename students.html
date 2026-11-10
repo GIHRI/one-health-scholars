@@ -132,6 +132,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
+    .cards-grid--two { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
 
     /* ── STUDENT CARD ── */
     .card {
@@ -190,7 +191,7 @@
 
     /* ── FOOTER ── */
     .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
-    .sf-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+    .sf-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
     .sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
     .sf-brand span{color:#E84A27;}
     .sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
@@ -284,7 +285,7 @@
   <div style="text-align:center;padding:48px 0 0"><div class="section-label">2026 Student Ambassadors</div></div>
   <p style="text-align:center;margin:1rem auto 0;font-size:.95rem;color:var(--muted);">Meet the 2026 cohort of scholars.</p>
   <div class="cards-section" style="padding-top:1.5rem;padding-bottom:64px;">
-    <div class="cards-grid">
+    <div class="cards-grid cards-grid--two">
 
       <!-- Student 1 -->
       <div class="card">
@@ -320,26 +321,6 @@
             <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Haley earned her MPH in Biostatistics from the University of Illinois Chicago and a Bachelor's in Integrative Biology from UIUC. Her background in tick ecology research drives a strong interest in applying evidence-based practices to emerging One Health challenges.</p>
           </div>
           <a class="card-link" href="https://www.linkedin.com/in/haley-elmer-mph-19991b29b" target="_blank" style="margin-top:auto;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <!-- Student 3 -->
-      <div class="card">
-        <div class="card-accent"></div>
-        <div class="profile-top">
-
-          <div class="avatar"><img src="images/Alyah.jpg" alt="Alyah Barnes" style="object-position:center 15%;"></div>
-          <div>
-            <div class="card-name">Alyah Barnes</div>
-            <div class="card-credentials">MPH, Community Health Sciences</div>
-
-            <div class="card-dept">University of Illinois Chicago</div>
-            <p style="font-size:.78rem;color:var(--muted);line-height:1.65;margin-top:.75rem;">Alyah earned her MPH from the University of Illinois Chicago with a concentration in Community Health Sciences. Her work spans public health research, community engagement, and program implementation, with a focus on health equity and chronic disease prevention.</p>
-          </div>
-          <a class="card-link" href="#" target="_blank" style="margin-top:auto;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -410,24 +391,12 @@
               <p class="vq-quote">I was beyond excited when I came across this unique opportunity, because I felt that my academic background and One Health-related research experience aligned perfectly with the program. I am really looking forward to kicking off my public health career by developing the skills necessary to address complex One Health issues while also learning from various experts in the field.</p>
             </div>
           </div>
-          <div class="vq-slide">
-            <div class="vq-left">
-              <div class="vq-photo"><img src="images/Alyah.jpg" alt="Alyah Barnes" style="object-position:center 15%;"></div>
-              <div class="vq-name">Alyah Barnes</div>
-              <div class="vq-role">MPH Community Health Sciences · UIC</div>
-            </div>
-            <div class="vq-right">
-              <div class="vq-qmark">&ldquo;</div>
-              <p class="vq-quote">I am excited to join the One Health Scholars Program because it brings together so many of the things I am passionate about, including community health, collaboration, and finding solutions to complex public health challenges. I look forward to growing as a public health professional while working alongside others who are committed to creating healthier and more resilient communities.</p>
-            </div>
-          </div>
         </div>
         <button class="vq-arrow" type="button" data-vq-next aria-label="Next quote">&#8250;</button>
       </div>
       <div class="vq-dots">
         <button class="vq-dot active" type="button" data-vq-dot aria-label="Go to quote 1"></button>
         <button class="vq-dot" type="button" data-vq-dot aria-label="Go to quote 2"></button>
-        <button class="vq-dot" type="button" data-vq-dot aria-label="Go to quote 3"></button>
       </div>
     </div>
   </section>
@@ -581,25 +550,12 @@
       </div>
       <div class="sf-partners">
         <div class="sf-partner">
-          <img src="images/system.png" alt="U of I System" style="max-height:200px;max-width:300px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
-        </div>
-        <div class="sf-divider"></div>
-        <div class="sf-partner">
           <img src="images/dpi.png" alt="Discovery Partners Institute" style="max-height:140px;max-width:220px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
         </div>
         <div class="sf-divider"></div>
         <div class="sf-partner">
-          <img src="images/idph.png" alt="IDPH" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+          <img src="images/idph.png" alt="Illinois Department of Public Health" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
         </div>
-      </div>
-      <div class="sf-links" style="margin-left:2rem;">
-        <div class="sf-links-head">Links</div>
-        <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="students.html">Students</a>
-        <a href="project.html">Project</a>
-        <a href="contact.html">Contact Us</a>
       </div>
     </div>
   </footer>

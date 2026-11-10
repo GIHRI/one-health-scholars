@@ -56,6 +56,7 @@ body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 .section-label-text{font-family:'Source Serif 4',serif;font-size:1.5rem;color:var(--navy);font-weight:600}
 .section-label-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 .section-pill{font-size:1.4rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--orange);padding:0;flex-shrink:0}
+.section-pill--long{font-size:1.05rem;flex-shrink:1;text-align:center;line-height:1.35}
 
 /* GRID */
 .team-grid{display:grid;grid-template-columns:1fr 1fr 3rem 1fr 1fr;gap:1.5rem}
@@ -95,7 +96,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 
 /* ── SHARED FOOTER ── */
 .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
-.sf-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+.sf-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
 .sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
 .sf-brand span{color:#E84A27;}
 .sf-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1rem;}
@@ -179,8 +180,8 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 
     <!-- Split labels: DPI left, IDPH right -->
     <div class="section-label-row">
-      <div class="section-label"><span class="section-pill">DPI Team</span></div>
-      <div class="section-label"><span class="section-pill">IDPH Team</span></div>
+      <div class="section-label"><span class="section-pill section-pill--long">Discovery Partners Institute (DPI)</span></div>
+      <div class="section-label"><span class="section-pill section-pill--long">Illinois Department of Public Health (IDPH)</span></div>
     </div>
 
     <!-- Row 1: Rukmini, Anuj, Arti, Matthew -->
@@ -333,24 +334,12 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
     </div>
     <div class="sf-partners">
       <div class="sf-partner">
-        <img src="images/system.png" alt="U of I System" style="max-height:200px;max-width:300px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
-      </div>
-      <div class="sf-divider"></div>
-      <div class="sf-partner">
         <img src="images/dpi.png" alt="Discovery Partners Institute" style="max-height:140px;max-width:220px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
       </div>
       <div class="sf-divider"></div>
       <div class="sf-partner">
-        <img src="images/idph.png" alt="IDPH" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
+        <img src="images/idph.png" alt="Illinois Department of Public Health" style="max-height:140px;max-width:200px;width:auto;height:auto;object-fit:contain;mix-blend-mode:screen;">
       </div>
-    </div>
-    <div class="sf-links" style="margin-left:2rem;">
-      <div class="sf-links-head">Links</div>
-      <a href="index.html">Home</a>
-      <a href="team.html">Team</a>
-      <a href="faculty.html">Faculty</a>
-      <a href="project.html">Project</a>
-      <a href="contact.html">Contact Us</a>
     </div>
   </div>
 </footer>
