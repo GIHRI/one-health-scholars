@@ -418,11 +418,12 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="project.html">Project</a>
+    <a href="onehealth.html">One Health</a>
       <div class="nav-dropdown">
         <button class="nav-drop-btn active">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
         <div class="nav-drop-menu">
           <a href="faculty.html" class="active">Faculty</a>
-          <a href="students.html">Students</a>
+          <a href="students.html">Scholars</a>
           <a href="lhd.html">Health Depts</a>
         </div>
       </div>
@@ -438,7 +439,7 @@
         <div class="hero-eyebrow">Experiential Learning</div>
         <h1>Faculty <em>Mentors</em></h1>
         <div class="hero-line"></div>
-        <p class="hero-sub">The Discovery Partners Institute (DPI) identified three faculty mentors through a structured call across the University of Illinois Urbana-Champaign (UIUC), the University of Illinois Chicago (UIC), and the University of Illinois Springfield (UIS), selecting researchers with active One Health-aligned projects, existing Illinois community partnerships, and availability to guide a graduate scholar through the 2026 cohort year.</p>
+        <p class="hero-sub">The Discovery Partners Institute (DPI) identified three faculty mentors through a structured call across the University of Illinois Urbana-Champaign (UIUC), the University of Illinois Chicago (UIC), and the University of Illinois Springfield (UIS), selecting researchers with active One Health-aligned projects, existing Illinois community partnerships, and availability to guide a One Health Scholar through the 2026 cohort year.</p>
       </div>
       <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
         <svg width="289" height="355" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
@@ -748,7 +749,7 @@
         <div id="tl-panels" style="margin-top:2rem;">
           <div class="tl-panel" id="tl-panel-0">
             <strong>Mentorship Begins, Feb 2026</strong>
-            Faculty mentors are matched with the two graduate scholars. Scholars are oriented to their project scope, introduced to community partners, and begin structured weekly check-ins with their mentor.
+            Faculty mentors are matched with the two One Health Scholars. Scholars are oriented to their project scope, introduced to community partners, and begin structured weekly check-ins with their mentor.
           </div>
           <div class="tl-panel" id="tl-panel-1">
             <strong>Field Research, Mar 2026</strong>
@@ -764,7 +765,7 @@
           </div>
           <div class="tl-panel" id="tl-panel-4">
             <strong>Scholars Placed, 2027</strong>
-            Graduate scholars complete the program and enter the Illinois public health workforce as trained One Health coordinators, carrying applied research experience and cross-sector relationships built during the 2026 cohort year.
+            One Health Scholars complete the program and enter the Illinois public health workforce as trained One Health coordinators, carrying applied research experience and cross-sector relationships built during the 2026 cohort year.
           </div>
         </div>
 
@@ -849,7 +850,7 @@
 
     /* ── SHARED FOOTER ── */
     /* ── SHARED FOOTER ── */
-    .site-footer{background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
+    .site-footer{display:block;background:#13294B;padding:3rem 3rem 2rem;border-top:1px solid rgba(255,255,255,.08);}
     .sf-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
     .sf-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.75rem;}
     .sf-brand span{color:#E84A27;}
@@ -957,5 +958,35 @@
     }
   </script>
 
+  <script>
+  // Keep matching text blocks the same height across cards in each visual row
+  (function () {
+    var groups = [
+      ['.card', ['.card-name', '.card-credentials', '.card-title', '.card-school', '.card-dept']],
+      ['.project-card-body', ['.project-eyebrow', '.project-title']]
+    ];
+    function equalize() {
+      groups.forEach(function (g) {
+        g[1].forEach(function (sel) {
+          var els = Array.prototype.slice.call(document.querySelectorAll(g[0] + ' ' + sel));
+          els.forEach(function (el) { el.style.minHeight = ''; });
+          var rows = {};
+          els.forEach(function (el) {
+            var key = Math.round(el.closest(g[0]).getBoundingClientRect().top + window.scrollY);
+            (rows[key] = rows[key] || []).push(el);
+          });
+          Object.keys(rows).forEach(function (k) {
+            if (rows[k].length < 2) return;
+            var max = Math.max.apply(null, rows[k].map(function (el) { return el.offsetHeight; }));
+            rows[k].forEach(function (el) { el.style.minHeight = max + 'px'; });
+          });
+        });
+      });
+    }
+    window.addEventListener('load', equalize);
+    window.addEventListener('resize', equalize);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
+  })();
+  </script>
 </body>
 </html>

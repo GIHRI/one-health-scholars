@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Ambassadors — One Health Scholars</title>
+  <title>2026 One Health Scholars — One Health Scholars</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
@@ -231,11 +231,12 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="project.html">Project</a>
+    <a href="onehealth.html">One Health</a>
       <div class="nav-dropdown">
         <button class="nav-drop-btn active">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
         <div class="nav-drop-menu">
           <a href="faculty.html">Faculty</a>
-          <a href="students.html" class="active">Students</a>
+          <a href="students.html" class="active">Scholars</a>
           <a href="lhd.html">Health Depts</a>
         </div>
       </div>
@@ -249,9 +250,9 @@
     <div class="hero-inner">
       <div style="flex:1;min-width:0;">
         <div class="hero-eyebrow">2026 One Health Scholars</div>
-        <h1>Student <em>Ambassadors</em></h1>
+        <h1>2026 One Health <em>Scholars</em></h1>
         <div class="hero-line"></div>
-        <p>The 2026 cohort brings together graduate students from across UIUC, UIC, and UIS — selected through a competitive application process for their academic preparation, prior community or research experience, and demonstrated interest in cross-disciplinary public health work. Each scholar is paired with a faculty mentor whose active project aligns with their background and career goals.</p>
+        <p>The 2026 cohort brings together One Health Scholars from across UIUC, UIC, and UIS — selected through a competitive application process for their academic preparation, prior community or research experience, and demonstrated interest in cross-disciplinary public health work. Each scholar is paired with a faculty mentor whose active project aligns with their background and career goals.</p>
       </div>
       <!-- Right: graduation cap visual -->
       <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
@@ -282,7 +283,7 @@
   </div>
 
   <!-- STUDENT CARDS -->
-  <div style="text-align:center;padding:48px 0 0"><div class="section-label">2026 Student Ambassadors</div></div>
+  <div style="text-align:center;padding:48px 0 0"><div class="section-label">2026 One Health Scholars</div></div>
   <p style="text-align:center;margin:1rem auto 0;font-size:.95rem;color:var(--muted);">Meet the 2026 cohort of scholars.</p>
   <div class="cards-section" style="padding-top:1.5rem;padding-bottom:64px;">
     <div class="cards-grid cards-grid--two">
@@ -560,5 +561,35 @@
     </div>
   </footer>
 
+  <script>
+  // Keep matching text blocks the same height across cards in each visual row
+  (function () {
+    var groups = [
+      ['.card', ['.card-name', '.card-credentials', '.card-title', '.card-school', '.card-dept']],
+      ['.project-card-body', ['.project-eyebrow', '.project-title']]
+    ];
+    function equalize() {
+      groups.forEach(function (g) {
+        g[1].forEach(function (sel) {
+          var els = Array.prototype.slice.call(document.querySelectorAll(g[0] + ' ' + sel));
+          els.forEach(function (el) { el.style.minHeight = ''; });
+          var rows = {};
+          els.forEach(function (el) {
+            var key = Math.round(el.closest(g[0]).getBoundingClientRect().top + window.scrollY);
+            (rows[key] = rows[key] || []).push(el);
+          });
+          Object.keys(rows).forEach(function (k) {
+            if (rows[k].length < 2) return;
+            var max = Math.max.apply(null, rows[k].map(function (el) { return el.offsetHeight; }));
+            rows[k].forEach(function (el) { el.style.minHeight = max + 'px'; });
+          });
+        });
+      });
+    }
+    window.addEventListener('load', equalize);
+    window.addEventListener('resize', equalize);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
+  })();
+  </script>
 </body>
 </html>

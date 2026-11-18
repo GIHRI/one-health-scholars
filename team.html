@@ -56,19 +56,22 @@ body>*:not(nav){animation:pageRise .45s cubic-bezier(.22,.61,.36,1) both}
 .section-label-text{font-family:'Source Serif 4',serif;font-size:1.5rem;color:var(--navy);font-weight:600}
 .section-label-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 .section-pill{font-size:1.4rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--orange);padding:0;flex-shrink:0}
-.section-pill--long{font-size:1.05rem;flex-shrink:1;text-align:center;line-height:1.35}
+.section-pill--long{font-size:clamp(.75rem,1.25vw,1.15rem);letter-spacing:.05em;white-space:nowrap;text-align:center;line-height:1.35}
 
 /* GRID */
 .team-grid{display:grid;grid-template-columns:1fr 1fr 3rem 1fr 1fr;gap:1.5rem}
 .team-grid.centered{grid-template-columns:repeat(2,minmax(0,320px));justify-content:center}
 .col-divider{display:block}
-.section-label-row{display:grid;grid-template-columns:1fr 1fr;margin-bottom:1.5rem}
+.section-label-row{display:grid;grid-template-columns:1fr 1fr 3rem 1fr 1fr;gap:0 1.5rem;align-items:end;margin-bottom:1.5rem}
+.section-label-row .section-label{margin-bottom:0}
+.section-label-row .section-label:first-child{grid-column:1 / 3}
+.section-label-row .section-label:last-child{grid-column:4 / 6}
 
 /* CARD */
 .member-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column}
 .member-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(19,41,75,.1)}
 .card-photo{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--navy) 0%,#1e3f73 60%,rgba(232,74,39,.25) 100%)}
-.card-photo-placeholder{width:80px;height:80px;border-radius:50%;border:3px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Source Serif 4',serif;font-size:1.8rem;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08)}
+.card-photo-placeholder{width:140px;height:140px;border-radius:50%;border:3px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Source Serif 4',serif;font-size:2.6rem;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08)}
 .card-photo img{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.25)}
 .card-photo-accent{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),#ff8c5a)}
 .card-photo.idph{background:linear-gradient(145deg,var(--navy) 0%,#1e3f73 60%,rgba(232,74,39,.25) 100%)}
@@ -124,11 +127,12 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="project.html">Project</a>
+    <a href="onehealth.html">One Health</a>
     <div class="nav-dropdown">
       <button class="nav-drop-btn">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
       <div class="nav-drop-menu">
         <a href="faculty.html">Faculty</a>
-        <a href="students.html">Students</a>
+        <a href="students.html">Scholars</a>
         <a href="lhd.html">Health Depts</a>
       </div>
     </div>
@@ -184,7 +188,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
       <div class="section-label"><span class="section-pill section-pill--long">Illinois Department of Public Health (IDPH)</span></div>
     </div>
 
-    <!-- Row 1: Rukmini, Anuj, Arti, Matthew -->
+    <!-- Row 1: Rukmini, Anuj | Arti, Matthew -->
     <div class="team-grid" style="margin-bottom:1.5rem">
 
       <div class="member-card">
@@ -194,19 +198,8 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
         </div>
         <div class="card-body">
           <div class="card-name">Dr. Rukmini Manasa Avadhanam</div>
-          <div class="card-role">Principal Investigator</div>
-          <div class="card-bio-short">Senior Research Associate at DPI. A trained learning scientist and instructional designer with a Ph.D. in Curriculum & Instruction.</div>
-          <button class="show-more-btn" onclick="toggleBio(this)">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="card-bio-full">
-            Her research focuses on improving learning experiences for adult and K–12 learners through educational technologies and experiential learning. Within the One Health Research Program, she oversees program development, connects faculty mentors with student scholars, coordinates partnerships with local government sectors across Illinois, and leads the One Health Course module development.
-          </div>
-          <a class="card-link" href="https://dpi.illinois.edu/about/directory/rukmini-avadhanam" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Profile
-          </a>
+          <div class="card-role">Principal Investigator · Senior Research Associate</div>
+          <div class="card-bio-short">Oversees program development, connects faculty mentors with scholars, coordinates partnerships with local health departments, and leads One Health course module development.</div>
         </div>
       </div>
 
@@ -217,19 +210,8 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
         </div>
         <div class="card-body">
           <div class="card-name">Dr. Anuj Tiwari</div>
-          <div class="card-role">Co-Principal Investigator</div>
-          <div class="card-bio-short">Research Scientist at DPI, UIUC. Works at the intersection of geospatial science, AI, and One Health.</div>
-          <button class="show-more-btn" onclick="toggleBio(this)">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="card-bio-full">
-            His research focuses on understanding connections among human, animal, and environmental health through AI-driven analytics, geospatial modeling, and decision-support systems. He leads initiatives in infectious disease surveillance, geospatial platform development, and One Health informatics. Within the Illinois One Health Scholars Program, he provides strategic leadership in program development, partnership building, and advancing interdisciplinary One Health research.
-          </div>
-          <a class="card-link" href="https://dpi.illinois.edu/about/directory/anuj-tiwari" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Profile
-          </a>
+          <div class="card-role">Co-Principal Investigator · Research Scientist</div>
+          <div class="card-bio-short">Provides strategic leadership in program development, partnership building, and interdisciplinary One Health research.</div>
         </div>
       </div>
 
@@ -240,13 +222,10 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
           <img src="images/ArtiBarnes.png" alt="Dr. Arti Barnes">
           <div class="card-photo-accent"></div>
         </div>
-        <div class="card-body simple">
+        <div class="card-body">
           <div class="card-name">Dr. Arti Barnes</div>
           <div class="card-role">Chief Medical Officer</div>
-          <a class="card-link" href="https://nationalpress.org/speaker/dr-arti-barnes/" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Profile
-          </a>
+          <div class="card-bio-short">Provides executive leadership and guidance for the program on behalf of IDPH.</div>
         </div>
       </div>
 
@@ -258,28 +237,13 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
         <div class="card-body">
           <div class="card-name">Dr. Matthew Leslie, DVM, PhD</div>
           <div class="card-role">Laboratory Data &amp; Zoonotic Disease Epidemiologist</div>
-          <div class="card-bio-short">
-            Office of Health Protection and Response<br>
-            Communicable Diseases Section<br>
-            Illinois Department of Public Health
-          </div>
-          <button class="show-more-btn" onclick="toggleBio(this)">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="card-bio-full">
-            2121 W. Taylor St. #508, Chicago, Illinois 60612<br><br>
-            <span style="color:var(--text);font-weight:600">Cell:</span> 217-606-1303<br>
-            <span style="color:var(--text);font-weight:600">Office:</span> 312-793-9062<br>
-            <span style="color:var(--text);font-weight:600">CD Main:</span> 217-782-2016<br><br>
-            (He/Him/His)
-          </div>
+          <div class="card-bio-short">Provides zoonotic disease expertise and guides the objectives and content of the One Health course modules.</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Row 2: Mayowa, Aman under DPI columns -->
+    <!-- Row 2: Mayowa, Aman | Hillary -->
     <div class="team-grid">
 
       <div class="member-card">
@@ -290,14 +254,7 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
         <div class="card-body">
           <div class="card-name">Mayowa Elizabeth Adebowale</div>
           <div class="card-role">Graduate Research Assistant</div>
-          <div class="card-bio-short">Graduate student at UIC with a background in Biomedical Science and a strong interest in innovative medicine and public health.</div>
-          <button class="show-more-btn" onclick="toggleBio(this)">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="card-bio-full">
-            Her interests center on the intersection of healthcare research, technology, and community health impact. As a Graduate Research Assistant, Mayowa supports the lead researchers in coordinating day-to-day operations of the program and contributes to external research, resource gathering, and program organization related to One Health initiatives and public health awareness in Illinois.
-          </div>
+          <div class="card-bio-short">Supports day-to-day program operations, research, resource gathering, and program organization.</div>
         </div>
       </div>
 
@@ -309,14 +266,22 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
         <div class="card-body">
           <div class="card-name">Aman Saji</div>
           <div class="card-role">Full Stack Developer</div>
-          <div class="card-bio-short">Undergraduate student in Computer Engineering at UIUC, working at DPI under Dr. Anuj Tiwari.</div>
-          <button class="show-more-btn" onclick="toggleBio(this)">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="card-bio-full">
-            Aman contributes to the technical development of the One Health Scholars platform, building full-stack web infrastructure that supports the program's research and outreach goals. His work spans backend API development, database architecture, and frontend design, translating complex public health data into accessible, user-friendly digital tools.
-          </div>
+          <div class="card-bio-short">Builds and maintains the One Health Scholars website and digital platform.</div>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="member-card">
+        <div class="card-photo idph">
+          <img src="images/HillaryAggertt.png" alt="Hillary Aggertt" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-photo-placeholder" aria-hidden="true" style="display:none">HA</div>
+          <div class="card-photo-accent"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Hillary Aggertt, MS</div>
+          <div class="card-role">Deputy Director, Office of Public Health Practice</div>
+          <div class="card-bio-short">Coordinates and implements scholar placements in local health departments.</div>
         </div>
       </div>
 
@@ -345,6 +310,27 @@ footer{background:var(--navy);padding:1.5rem 2.5rem}
 </footer>
 
 <script>
+// Keep names and titles the same height across cards in each visual row
+function equalizeTeamCards() {
+  ['.card-name', '.card-role'].forEach(function (sel) {
+    var els = Array.prototype.slice.call(document.querySelectorAll('.member-card ' + sel));
+    els.forEach(function (el) { el.style.minHeight = ''; });
+    var rows = {};
+    els.forEach(function (el) {
+      var top = el.closest('.member-card').getBoundingClientRect().top + window.scrollY;
+      var key = Math.round(top);
+      (rows[key] = rows[key] || []).push(el);
+    });
+    Object.keys(rows).forEach(function (k) {
+      var max = Math.max.apply(null, rows[k].map(function (el) { return el.offsetHeight; }));
+      rows[k].forEach(function (el) { el.style.minHeight = max + 'px'; });
+    });
+  });
+}
+window.addEventListener('load', equalizeTeamCards);
+window.addEventListener('resize', equalizeTeamCards);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeTeamCards);
+
 function toggleBio(btn) {
   const bio = btn.nextElementSibling;
   const open = bio.classList.toggle('visible');

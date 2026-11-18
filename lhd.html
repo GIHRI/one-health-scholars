@@ -249,11 +249,12 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="project.html">Project</a>
+    <a href="onehealth.html">One Health</a>
       <div class="nav-dropdown">
         <button class="nav-drop-btn active">2026 Cohort <span class="nav-drop-caret">&#9662;</span></button>
         <div class="nav-drop-menu">
           <a href="faculty.html">Faculty</a>
-          <a href="students.html">Students</a>
+          <a href="students.html">Scholars</a>
           <a href="lhd.html" class="active">Health Depts</a>
         </div>
       </div>
@@ -269,7 +270,7 @@
         <div class="hero-eyebrow">2026 One Health Scholars</div>
         <h1>Partner Health <em>Departments</em></h1>
         <div class="hero-line"></div>
-        <p>The 2026 cohort places graduate scholars directly within Local Health Departments (LHDs) across Illinois — building a pipeline between university research and public health practice. Each placement is structured around a real departmental need, giving scholars applied field experience while contributing to the LHD's capacity for One Health work.</p>
+        <p>The 2026 cohort places One Health Scholars directly within Local Health Departments (LHDs) across Illinois — building a pipeline between university research and public health practice. Each placement is structured around a real departmental need, giving scholars applied field experience while contributing to the LHD's capacity for One Health work.</p>
       </div>
       <!-- Right: Illinois map -->
       <div style="flex-shrink:0;display:flex;align-items:center;opacity:.9;">
@@ -673,5 +674,35 @@
     </div>
   </footer>
 
+  <script>
+  // Keep matching text blocks the same height across cards in each visual row
+  (function () {
+    var groups = [
+      ['.card', ['.card-name', '.card-credentials', '.card-title', '.card-school', '.card-dept']],
+      ['.project-card-body', ['.project-eyebrow', '.project-title']]
+    ];
+    function equalize() {
+      groups.forEach(function (g) {
+        g[1].forEach(function (sel) {
+          var els = Array.prototype.slice.call(document.querySelectorAll(g[0] + ' ' + sel));
+          els.forEach(function (el) { el.style.minHeight = ''; });
+          var rows = {};
+          els.forEach(function (el) {
+            var key = Math.round(el.closest(g[0]).getBoundingClientRect().top + window.scrollY);
+            (rows[key] = rows[key] || []).push(el);
+          });
+          Object.keys(rows).forEach(function (k) {
+            if (rows[k].length < 2) return;
+            var max = Math.max.apply(null, rows[k].map(function (el) { return el.offsetHeight; }));
+            rows[k].forEach(function (el) { el.style.minHeight = max + 'px'; });
+          });
+        });
+      });
+    }
+    window.addEventListener('load', equalize);
+    window.addEventListener('resize', equalize);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
+  })();
+  </script>
 </body>
 </html>
